@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yuvansh Bhardwaj | AI Engineer Portfolio</title>
-  <meta name="description" content="AI Engineer with 7+ years of experience in ML, Deep Learning, and Generative AI. Building intelligent systems that solve real-world problems at scale.">
+  <meta name="description" content="AI Engineer with 7+ years building production-grade LLM pipelines, multi-agent systems, and RAG workflows. Delivered impact for Roche, Subway, GAP, Gucci, and Ralph Lauren.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -22,83 +22,80 @@
       background: var(--bg);
       color: var(--fg);
       line-height: 1.7;
+      margin: 0;
     }
-    h1, h2, h3, h4, .display-font {
-      font-family: 'Inter Tight', sans-serif;
-    }
+    h1, h2, h3, h4 { font-family: 'Inter Tight', sans-serif; margin: 0; }
     .glass-card {
       background: var(--glass-bg);
       backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--glass-border);
       border-radius: 12px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
     }
+    .glass-card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .glass-card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
     .text-muted-custom { color: var(--muted); }
     .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--muted);
+      font-size: 11px; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--muted); margin-bottom: 4px;
     }
-    .section-title {
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    .skill-tag {
-      display: inline-block;
-      padding: 6px 14px;
-      font-size: 13px;
-      border-radius: 8px;
-      margin: 3px;
-    }
-    .cert-card {
-      transition: transform 0.2s ease;
-    }
-    .cert-card:hover {
-      transform: translateY(-4px);
-    }
+    .section-title { font-weight: 900; letter-spacing: -0.02em; }
     .divider { border-top: 1px solid var(--border); }
-    a { color: var(--fg); }
+    a { color: var(--fg); text-decoration: none; }
+    a:hover { color: var(--fg); }
     .btn-primary-custom {
-      background: var(--fg);
-      color: white;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-family: 'Inter Tight', sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      display: inline-block;
+      background: var(--fg); color: white; border: none;
+      padding: 10px 24px; border-radius: 50px;
+      font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 14px;
+      display: inline-block; transition: opacity 0.2s;
     }
+    .btn-primary-custom:hover { opacity: 0.85; color: white; }
     .btn-outline-custom {
-      background: transparent;
-      color: var(--fg);
-      border: 1px solid var(--border);
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-family: 'Inter Tight', sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      display: inline-block;
+      background: transparent; color: var(--fg);
+      border: 1px solid var(--border); padding: 10px 24px; border-radius: 50px;
+      font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 14px;
+      display: inline-block; transition: border-color 0.2s;
     }
     .btn-outline-custom:hover { border-color: var(--fg); }
-    .hero-section {
-      padding: 80px 0 60px;
+    .specialty-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px; font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted);
     }
-    .cta-section {
-      background: var(--fg);
-      color: white;
-    }
-    .cta-section .text-muted-custom { color: rgba(255,255,255,0.5); }
-    .experience-item + .experience-item { border-top: 1px solid var(--border); }
-    nav.navbar { backdrop-filter: blur(16px); background: rgba(245,245,247,0.8); }
     .bullet-dot {
-      width: 4px; height: 4px; border-radius: 50%; background: var(--fg);
-      margin-top: 10px; flex-shrink: 0;
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--fg); margin-top: 10px; flex-shrink: 0;
     }
+    .experience-item + .experience-item { border-top: 1px solid var(--border); }
+    .portrait-wrapper {
+      position: relative; max-width: 340px; margin: 0 auto;
+    }
+    .portrait-glow {
+      position: absolute; inset: -16px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(100,130,220,0.2), rgba(140,100,200,0.2));
+      filter: blur(24px); z-index: 0;
+    }
+    .portrait-img-wrapper {
+      position: relative; z-index: 1; border-radius: 16px;
+      overflow: hidden; aspect-ratio: 3/4;
+    }
+    .portrait-img-wrapper img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top;
+    }
+    .portrait-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 16px; z-index: 2;
+    }
+    .portrait-overlay .glass-card { padding: 12px 16px; }
+    nav.navbar {
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      background: rgba(245,245,247,0.8);
+    }
+    .cta-section { background: var(--fg); color: white; }
+    .cta-section a { color: white; }
+    .skill-group { border-left: 2px solid var(--border); padding-left: 16px; transition: border-color 0.2s; }
+    .skill-group:hover { border-left-color: var(--fg); }
   </style>
 </head>
 <body>
@@ -106,7 +103,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top border-bottom" style="border-color: var(--border) !important;">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#" style="font-family: 'Inter Tight', sans-serif;">Yuvansh<span style="color: #ccc;">.</span></a>
+    <a class="navbar-brand fw-bold" href="#" style="font-family:'Inter Tight',sans-serif;">Yuvansh<span style="color:#ccc;">.</span></a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -125,49 +122,71 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero-section">
+<section style="padding: 60px 0 40px;">
   <div class="container">
-    <p class="section-label mb-2">AI Engineer</p>
-    <h1 class="section-title" style="font-size: clamp(2.2rem, 5.5vw, 4.5rem); line-height: 1;">Yuvansh Bhardwaj</h1>
-    <p class="mt-3 text-muted-custom" style="max-width: 480px; font-size: 15px;">
-      An AI Engineer building intelligent systems that solve real-world problems at scale.
-    </p>
-    <div class="mt-4 d-flex gap-2 flex-wrap">
-      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Multi-Agent AI</span>
-      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">LLM Pipelines</span>
-      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Production ML</span>
-      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">RAG Systems</span>
-    </div>
-    <div class="mt-4 d-flex gap-2">
-      <a href="#projects" class="btn-primary-custom">View Projects</a>
-      <a href="https://linkedin.com/in/yuvansh1302" target="_blank" class="btn-outline-custom">LinkedIn</a>
-      <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom">GitHub</a>
-      <a href="mailto:yuvansh2@gmail.com" class="btn-outline-custom">Email</a>
+    <div class="row align-items-end">
+      <!-- Text -->
+      <div class="col-md-7 order-2 order-md-1" style="padding-bottom: 40px;">
+        <div class="glass-card d-inline-flex align-items-center gap-2 px-3 py-1 mb-3" style="border-radius:50px;">
+          <span style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.2em; color:var(--muted);">AI Engineer</span>
+        </div>
+        <h1 class="section-title" style="font-size: clamp(2.2rem, 5.5vw, 4.5rem); line-height: 1;">Yuvansh Bhardwaj</h1>
+        <p class="mt-3 text-muted-custom" style="max-width: 480px; font-size: 15px;">
+          Building production-grade LLM pipelines, multi-agent systems, and RAG workflows. 7+ years delivering AI impact for Roche, Subway, GAP, Gucci & Ralph Lauren.
+        </p>
+        <div class="mt-3 d-flex flex-wrap gap-2">
+          <span class="glass-card specialty-tag">Multi-Agent AI</span>
+          <span class="glass-card specialty-tag">LLM Pipelines</span>
+          <span class="glass-card specialty-tag">Production ML</span>
+          <span class="glass-card specialty-tag">RAG Systems</span>
+        </div>
+        <div class="mt-4 d-flex gap-2 flex-wrap">
+          <a href="#projects" class="btn-primary-custom">View Projects</a>
+          <a href="https://linkedin.com/in/yuvansh1302" target="_blank" class="btn-outline-custom">LinkedIn</a>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom">GitHub</a>
+          <a href="mailto:yuvansh2@gmail.com" class="btn-outline-custom">Email</a>
+        </div>
+      </div>
+      <!-- Portrait -->
+      <div class="col-md-5 order-1 order-md-2 d-flex justify-content-center justify-content-md-end mb-4 mb-md-0">
+        <div class="portrait-wrapper">
+          <div class="portrait-glow"></div>
+          <div class="portrait-img-wrapper">
+            <img src="portrait.png" alt="Yuvansh Bhardwaj — AI Engineer">
+            <div class="portrait-overlay">
+              <div class="glass-card">
+                <p style="font-family:'Inter Tight',sans-serif; font-size:12px; font-weight:700; margin:0;">Yuvansh Bhardwaj</p>
+                <p style="font-size:10px; color:var(--muted); margin:0;">AI Engineer · 7+ years</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Stats -->
-<section class="py-4">
+<section class="py-3">
   <div class="container">
     <div class="row g-3">
-      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">7+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Years Experience</p></div></div>
-      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">30+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Dashboards Built</p></div></div>
-      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">5+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">AI Systems Deployed</p></div></div>
-      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">1M+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Records Analyzed</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card glass-card-hover text-center p-4"><p class="section-title mb-1" style="font-size:2rem;">7+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Years Experience</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card glass-card-hover text-center p-4"><p class="section-title mb-1" style="font-size:2rem;">30+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Dashboards Built</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card glass-card-hover text-center p-4"><p class="section-title mb-1" style="font-size:2rem;">5+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">AI Systems Deployed</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card glass-card-hover text-center p-4"><p class="section-title mb-1" style="font-size:2rem;">1M+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Records Analyzed</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- About -->
-<section id="about" class="py-5">
+<section id="about" class="py-5 mt-4">
   <div class="container">
     <p class="section-label">About</p>
-    <h2 class="section-title mt-1" style="font-size:2rem;">About Me</h2>
-    <div class="row mt-4">
-      <div class="col-md-8">
+    <h2 class="section-title" style="font-size:2rem;">Career Summary</h2>
+    <div class="row mt-3">
+      <div class="col-lg-8">
         <p class="text-muted-custom" style="font-size:15px;">
-          I am an AI Engineer with 7+ years of experience across advanced analytics, machine learning, deep learning, and Generative AI. My work spans banking, retail, and healthcare. I specialize in building scalable AI systems, LLM pipelines, and cloud-native ML apps that deliver measurable business outcomes. My strengths lie in translating complex technical challenges into practical business solutions, and I am passionate about mentoring and driving AI adoption across organizations.
+          Experienced Data & AI professional with 7+ years building production-grade LLM pipelines, multi-agent systems, and RAG workflows using LangGraph, CrewAI, and LangChain. Delivered impact for clients including Roche, Subway, GAP, Gucci, and Ralph Lauren. Certified in Google AI, AWS Machine Learning, and CrewAI Agents, with hands-on experience on Azure AI Foundry and AWS. Bridging data science experimentation and production-ready AI engineering.
         </p>
       </div>
     </div>
@@ -178,45 +197,27 @@
 <section id="skills" class="py-5 divider">
   <div class="container">
     <p class="section-label">Expertise</p>
-    <h2 class="section-title mt-1" style="font-size:2rem;">Skills</h2>
-    <div class="row mt-4 g-3">
-      <div class="col-md-6">
-        <div class="glass-card p-4">
-          <h4 style="font-size:14px; font-weight:700;">AI & Machine Learning</h4>
-          <div class="mt-2">
-            <span class="skill-tag glass-card">Python</span>
-            <span class="skill-tag glass-card">R</span>
-            <span class="skill-tag glass-card">SQL</span>
-            <span class="skill-tag glass-card">PyTorch</span>
-            <span class="skill-tag glass-card">Hugging Face</span>
-            <span class="skill-tag glass-card">XGBoost</span>
-            <span class="skill-tag glass-card">Machine Learning</span>
-            <span class="skill-tag glass-card">Deep Learning</span>
-            <span class="skill-tag glass-card">NLP</span>
-            <span class="skill-tag glass-card">RAG</span>
-            <span class="skill-tag glass-card">LLM Fine-Tuning</span>
-            <span class="skill-tag glass-card">Prompt Engineering</span>
-          </div>
-        </div>
+    <h2 class="section-title" style="font-size:2rem;">Technical Skills</h2>
+    <div class="mt-4" style="display:grid; gap:16px;">
+      <div class="skill-group">
+        <h4 style="font-size:14px; font-weight:700;">AI & ML</h4>
+        <p class="text-muted-custom mb-0" style="font-size:13px;">LLMs (GPT, Gemini), Machine Learning Algorithms, RAG Pipelines, Agentic AI, Multi-Agent Systems (CrewAI, LangGraph), Fine-Tuning, Prompt Engineering, NLP, AutoML, Model Evaluation</p>
       </div>
-      <div class="col-md-6">
-        <div class="glass-card p-4">
-          <h4 style="font-size:14px; font-weight:700;">Cloud & Data Engineering</h4>
-          <div class="mt-2">
-            <span class="skill-tag glass-card">AWS</span>
-            <span class="skill-tag glass-card">Azure</span>
-            <span class="skill-tag glass-card">Docker</span>
-            <span class="skill-tag glass-card">CI/CD</span>
-            <span class="skill-tag glass-card">Snowflake</span>
-            <span class="skill-tag glass-card">BigQuery</span>
-            <span class="skill-tag glass-card">MySQL</span>
-            <span class="skill-tag glass-card">DBT</span>
-            <span class="skill-tag glass-card">Tableau</span>
-            <span class="skill-tag glass-card">PySpark</span>
-            <span class="skill-tag glass-card">Alteryx</span>
-            <span class="skill-tag glass-card">A/B Testing</span>
-          </div>
-        </div>
+      <div class="skill-group">
+        <h4 style="font-size:14px; font-weight:700;">Languages & Frameworks</h4>
+        <p class="text-muted-custom mb-0" style="font-size:13px;">Python (PyTorch, TensorFlow, LangChain, Hugging Face, XGBoost, Pandas, NumPy, scikit-learn), SQL, R, Flask, FastAPI, Scrapy, Statistical modeling</p>
+      </div>
+      <div class="skill-group">
+        <h4 style="font-size:14px; font-weight:700;">Cloud & DevOps</h4>
+        <p class="text-muted-custom mb-0" style="font-size:13px;">AWS (ECS Fargate, Lambda, S3, EC2), Azure (AI Foundry, OpenAI Service, Azure ML), GCP (BigQuery, Vertex AI), Docker, CI/CD, API Gateways</p>
+      </div>
+      <div class="skill-group">
+        <h4 style="font-size:14px; font-weight:700;">Databases & Data</h4>
+        <p class="text-muted-custom mb-0" style="font-size:13px;">Snowflake, Pinecone, OpenSearch, BigQuery, MySQL, PySpark, DBT, Alteryx, Vector Databases</p>
+      </div>
+      <div class="skill-group">
+        <h4 style="font-size:14px; font-weight:700;">Tools</h4>
+        <p class="text-muted-custom mb-0" style="font-size:13px;">Tableau, Power BI, Looker Studio, Google Analytics, Git, JIRA, Confluence, Agile/Scrum</p>
       </div>
     </div>
   </div>
@@ -226,30 +227,30 @@
 <section id="experience" class="py-5 divider">
   <div class="container">
     <p class="section-label">Career</p>
-    <h2 class="section-title mt-1" style="font-size:2rem;">Work Experience</h2>
+    <h2 class="section-title" style="font-size:2rem;">Professional Experience</h2>
     <div class="mt-4">
 
       <div class="experience-item py-4">
         <div class="d-flex flex-column flex-md-row justify-content-between">
-          <div><h3 style="font-size:16px; font-weight:700;">Roche <span style="font-weight:400; color:var(--muted);">| Data & Analytics Specialist</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Mississauga, ON, Canada</p></div>
+          <div><h3 style="font-size:16px; font-weight:700;">Roche <span style="font-weight:400; color:var(--muted);">| Data & Analytics Specialist</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Mississauga, ON</p></div>
           <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Mar 2024 – Present</p>
         </div>
         <ul class="mt-2" style="list-style:none; padding-left:0;">
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built an OCR + LLM pipeline using Tesseract, LangChain, Gemini API and GenAI techniques like prompt engineering to extract structured data from scanned lab reports, reducing manual processing by 60%.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Designed and deployed an AI agent with RAG and few-shot learning, integrated via Google APIs on Azure Cloud, delivering real-time, context-aware responses for the security team (Microsoft AI Hackathon winner).</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Designed 30+ KPI visualizations in Tableau cloud environment by transforming raw datasets into actionable metrics using SQL and Python, improving dashboard performance by 80%.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Reduced lab report processing from 40 minutes to 100 seconds by extracting text from PDFs via OCR, routing requests through a multi-model LLM API, storing embeddings in a vector database, and orchestrating retrieval through a multi-agent pipeline.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Developed an AI agent with RAG and few-shot learning via Google APIs on Azure Cloud, delivering real-time context-aware responses for security operations (Microsoft AI Hackathon winner).</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Designed 30+ KPI visualizations in Tableau Cloud using transformed SQL and Python datasets, improving dashboard performance by 80% and enabling faster executive decision-making.</span></li>
         </ul>
       </div>
 
       <div class="experience-item py-4">
         <div class="d-flex flex-column flex-md-row justify-content-between">
-          <div><h3 style="font-size:16px; font-weight:700;">Hays Recruitment (Subway) <span style="font-weight:400; color:var(--muted);">| Data Analytics Consultant</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Toronto, ON, Canada</p></div>
+          <div><h3 style="font-size:16px; font-weight:700;">Hays Recruitment (Subway) <span style="font-weight:400; color:var(--muted);">| Data Analytics Consultant</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Toronto, ON</p></div>
           <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Jul 2023 – Oct 2023</p>
         </div>
         <ul class="mt-2" style="list-style:none; padding-left:0;">
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Automated AI workflows using Python for pricing strategy, integrating directly into client systems, saving ~$200K annually.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Applied NLP techniques and LLM models to analyze large-scale customer feedbacks, uncovered key themes around pricing perception and informed loyalty strategy improvements.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Cleaned and transformed over 1 million rows of big data using SQL and PySpark, then visualized actionable trends across provinces in Tableau.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Automated AI workflows using Python for pricing strategy optimization, generating $200K+ in annual savings through data-driven pricing recommendations.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Applied NLP and LLM models on 1M+ customer feedback records to extract themes on pricing perception, improving loyalty strategies.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Engineered ETL pipelines using SQL and PySpark to process large-scale datasets and delivered interactive Tableau dashboards for regional business insights.</span></li>
         </ul>
       </div>
 
@@ -259,9 +260,7 @@
           <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Aug 2021 – Aug 2022</p>
         </div>
         <ul class="mt-2" style="list-style:none; padding-left:0;">
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Led a team of 10 AI-driven data analysts and data engineers to run data experiments using Agile sprints, A/B testing, and campaign attribution modeling.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Worked with major clients including GAP to develop interactive sales and growth reports using AI-Supported Google Looker Studio.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Improved customer journey checkout funnel conversion by 15% through end-to-end analysis of customer behavior data.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Led a 10-member cross-functional team building AI-driven analytics dashboards for Fortune 500 retail clients (GAP), integrating cloud data models with Looker Studio for real-time visibility across 500+ stores.</span></li>
         </ul>
       </div>
 
@@ -271,19 +270,22 @@
           <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Dec 2019 – May 2021</p>
         </div>
         <ul class="mt-2" style="list-style:none; padding-left:0;">
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built time series models in Python and R to forecast ROAS for retail clients like Gucci, Lacoste and Ralph Lauren, achieved 90% accuracy.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Developed automated reporting pipelines with Alteryx and BigQuery, driving a 5,000-unit increase in quarterly output.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Boosted checkout conversion rate by 15% through funnel analysis using Google Analytics and behavioral segmentation.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Executed experiments using Agile methodology, A/B testing, and attribution models to quantify marketing ROI.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Developed time series forecasting models with seasonality regressors in Python and R for luxury retail clients (Gucci, Ralph Lauren, Lacoste), achieving 90% accuracy.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built automated reporting pipelines with Alteryx and BigQuery, driving a 5,000-unit increase in quarterly output.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Engineered scalable ML pipelines that reduced data processing time by 60% and accelerated model deployment cycles.</span></li>
         </ul>
       </div>
 
       <div class="experience-item py-4">
         <div class="d-flex flex-column flex-md-row justify-content-between">
-          <div><h3 style="font-size:16px; font-weight:700;">Cars24 <span style="font-weight:400; color:var(--muted);">| Associate III, BI & Strategy</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Gurgaon, India</p></div>
+          <div><h3 style="font-size:16px; font-weight:700;">CARS24 <span style="font-weight:400; color:var(--muted);">| Associate III, BI & Strategy</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Gurgaon, India</p></div>
           <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Sep 2018 – Dec 2019</p>
         </div>
         <ul class="mt-2" style="list-style:none; padding-left:0;">
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Migrated analytics infrastructure from MySQL to Snowflake using Python and Alteryx, improved pipeline performance.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built a Markov Chain statistical model to quantify customer journey transitions and improve lead conversion.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Developed a Markov Chain model to quantify customer journey transitions and identify drop-offs, improving lead conversion and generating a 28% sales uplift.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Migrated analytics infrastructure from MySQL to Snowflake, reducing query times by 70%. Trained 30+ analysts on Alteryx workflows and self-service analytics.</span></li>
         </ul>
       </div>
 
@@ -293,8 +295,8 @@
           <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Apr 2017 – Sep 2018</p>
         </div>
         <ul class="mt-2" style="list-style:none; padding-left:0;">
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built a scalable web scraper in Python (Scrapy, BeautifulSoup), deployed on AWS Lambda and EC2.</span></li>
-          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Collaborated with SEO/PPC teams to turn scraped data into actionable campaign insights.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Developed a scalable Python web scraper (Scrapy, BeautifulSoup) deployed on AWS Lambda and EC2, automating competitive intelligence data pipelines.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Optimized SEO and PPC campaigns using Google Analytics and Keyword Planner, reducing cost-per-click by 25%.</span></li>
         </ul>
       </div>
 
@@ -306,38 +308,30 @@
 <section id="projects" class="py-5 divider">
   <div class="container">
     <p class="section-label">Work</p>
-    <h2 class="section-title mt-1" style="font-size:2rem;">Projects</h2>
+    <h2 class="section-title" style="font-size:2rem;">Key Projects</h2>
     <div class="row mt-4 g-3">
 
       <div class="col-md-6">
-        <div class="glass-card p-4 h-100">
-          <h3 style="font-size:16px; font-weight:700;">Customer Churn Prediction</h3>
-          <p class="text-muted-custom mt-2" style="font-size:14px;">Implemented AutoML with XGBoost on a dataset of 50,000+ customer records, reducing churn by 17% and helping the business retain ~1,200 customers per quarter. Automated feature selection and hyperparameter tuning to accelerate model development.</p>
-          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Project</a>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="glass-card p-4 h-100">
-          <h3 style="font-size:16px; font-weight:700;">Pharma AI Web App</h3>
-          <p class="text-muted-custom mt-2" style="font-size:14px;">Built a Flask-based application powered by Gemini LLM and real-time Wikipedia scraping to generate concise, evidence-backed clinical summaries. Integrated OCR preprocessing and a prompt-engineering pipeline that reduced manual report review time by ~60%.</p>
-          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Demo</a>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="glass-card p-4 h-100">
-          <h3 style="font-size:16px; font-weight:700;">Online Growth Marketing Report</h3>
-          <p class="text-muted-custom mt-2" style="font-size:14px;">Developed a Google Looker Studio dashboard integrating data from 10+ marketing channels, cutting reporting time by 40%. Insights enabled refined campaigns that increased conversions by 15%, translating to ~8,000 additional sign-ups in three months.</p>
-          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Report</a>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="glass-card p-4 h-100">
-          <h3 style="font-size:16px; font-weight:700;">PDF Data Extraction AI Agent</h3>
-          <p class="text-muted-custom mt-2" style="font-size:14px;">Developed a Python AI agent using Gemini 1.5 Flash to extract structured JSON from PDFs with a strict schema. Designed JSON-only prompts, salvage parsing, and normalization routines to ensure clean outputs ready for downstream analytics.</p>
+        <div class="glass-card glass-card-hover p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">AI-Powered Insurance Knowledge Retrieval System</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Designed an end-to-end RAG system using Gemini embeddings, Pinecone vector search, and FastAPI, enabling semantic policy retrieval and context-grounded LLM responses with namespace-based index isolation and Docker containerization.</p>
           <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Code</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card glass-card-hover p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">Banking Risk Intelligence Agent</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Built a multi-agent financial risk intelligence system converting unstructured financial news into structured, evidence-backed risk insights. Designed 4 specialized agents (planner, research, answer, critic) to classify risk, retrieve evidence, generate audit-friendly summaries with citations, and self-validate outputs.</p>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Code</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card glass-card-hover p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">Customer Churn Prediction</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Developed XGBoost and AutoML models predicting customer churn with high accuracy, enabling targeted retention strategies that reduced churn by 17% and improved customer lifetime value.</p>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Project</a>
         </div>
       </div>
 
@@ -349,26 +343,46 @@
 <section id="education" class="py-5 divider">
   <div class="container">
     <p class="section-label">Education</p>
-    <h2 class="section-title mt-1" style="font-size:2rem;">Education</h2>
+    <h2 class="section-title" style="font-size:2rem;">Education</h2>
     <div class="mt-4">
 
       <div class="experience-item py-4">
-        <h3 style="font-size:16px; font-weight:700;">University of Ottawa</h3>
-        <p style="font-size:14px; font-weight:500;">Generative AI Professional Certificate</p>
-        <p class="text-muted-custom mt-1" style="font-size:13px;"><strong>Relevant Coursework:</strong> Generative AI for Cybersecurity, Introduction to Generative AI, Prompting and Application Development, Fine-Tuning Large Language Models, Retrieval-Augmented Generation, Generative AI Capstone.</p>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div>
+            <h3 style="font-size:16px; font-weight:700;">University of Ottawa</h3>
+            <p style="font-size:14px; font-weight:500; margin:0;">Professional Certificate, Generative AI and Artificial Intelligence</p>
+          </div>
+          <div class="text-md-end">
+            <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Jul 2025 – Jan 2026</p>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">97.8% with Honours</p>
+          </div>
+        </div>
       </div>
 
       <div class="experience-item py-4">
-        <h3 style="font-size:16px; font-weight:700;">Georgian College, Barrie Campus</h3>
-        <p style="font-size:14px; font-weight:500;">Post-Graduate Certificate in Artificial Intelligence</p>
-        <p class="text-muted-custom mt-1" style="font-size:13px;"><strong>Relevant Coursework:</strong> Machine Learning, Advanced Data Analysis, NLP, Deep Learning, AI for Decision Making, AI Algorithms and Mathematics, Reinforcement Learning, Neural Networks, Conversational AI.</p>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div>
+            <h3 style="font-size:16px; font-weight:700;">Georgian College</h3>
+            <p style="font-size:14px; font-weight:500; margin:0;">Post-Graduation in AI Architecture, Design & Implementation</p>
+          </div>
+          <div class="text-md-end">
+            <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Sep 2022 – Apr 2023</p>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">89% with Honours</p>
+          </div>
+        </div>
       </div>
 
       <div class="experience-item py-4">
-        <h3 style="font-size:16px; font-weight:700;">I.K. Gujral Punjab Technical University</h3>
-        <p style="font-size:14px; font-weight:500;">B.Tech in Computer Science Engineering</p>
-        <p class="text-muted-custom" style="font-size:12px;">Aug 2013 – Apr 2017</p>
-        <p class="text-muted-custom mt-1" style="font-size:13px;"><strong>Relevant Coursework:</strong> Data Structures, Engineering Mathematics, OOPS Concepts, Operating Systems, RDBMS Labs, Software Engineering, Cloud Computing.</p>
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div>
+            <h3 style="font-size:16px; font-weight:700;">Punjab Technical University</h3>
+            <p style="font-size:14px; font-weight:500; margin:0;">B.Tech, Computer Science and Engineering</p>
+          </div>
+          <div class="text-md-end">
+            <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Aug 2013 – Apr 2017</p>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">75%</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -379,54 +393,40 @@
 <section id="certifications" class="py-5 divider">
   <div class="container">
     <p class="section-label">Credentials</p>
-    <h2 class="section-title mt-1" style="font-size:2rem;">Certifications</h2>
+    <h2 class="section-title" style="font-size:2rem;">Certifications</h2>
     <div class="row mt-4 g-3">
-
-      <div class="col-md-4">
-        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
-          <div class="glass-card p-4 cert-card h-100">
-            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Prompt Engineering & Programming with OpenAI</h4>
-            <p class="text-muted-custom mb-0" style="font-size:12px;">Columbia University · Aug 2025</p>
+      <div class="col-md-3 col-6">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank">
+          <div class="glass-card glass-card-hover p-3 h-100 text-center">
+            <h4 style="font-size:13px; font-weight:700;">Google AI Professional</h4>
+            <p class="text-muted-custom mb-0" style="font-size:11px;">Certified</p>
           </div>
         </a>
       </div>
-
-      <div class="col-md-4">
-        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
-          <div class="glass-card p-4 cert-card h-100">
-            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Machine Learning Specialization</h4>
-            <p class="text-muted-custom mb-0" style="font-size:12px;">Coursera (Andrew Ng, DeepLearning.AI) · Jul 2024</p>
+      <div class="col-md-3 col-6">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank">
+          <div class="glass-card glass-card-hover p-3 h-100 text-center">
+            <h4 style="font-size:13px; font-weight:700;">AWS Machine Learning</h4>
+            <p class="text-muted-custom mb-0" style="font-size:11px;">Certified</p>
           </div>
         </a>
       </div>
-
-      <div class="col-md-4">
-        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
-          <div class="glass-card p-4 cert-card h-100">
-            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Generative AI for Everyone</h4>
-            <p class="text-muted-custom mb-0" style="font-size:12px;">DeepLearning.AI</p>
+      <div class="col-md-3 col-6">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank">
+          <div class="glass-card glass-card-hover p-3 h-100 text-center">
+            <h4 style="font-size:13px; font-weight:700;">Tableau Desktop</h4>
+            <p class="text-muted-custom mb-0" style="font-size:11px;">Specialist</p>
           </div>
         </a>
       </div>
-
-      <div class="col-md-4">
-        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
-          <div class="glass-card p-4 cert-card h-100">
-            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Artificial Intelligence using Python</h4>
-            <p class="text-muted-custom mb-0" style="font-size:12px;">NIELIT</p>
+      <div class="col-md-3 col-6">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank">
+          <div class="glass-card glass-card-hover p-3 h-100 text-center">
+            <h4 style="font-size:13px; font-weight:700;">Alteryx Designer</h4>
+            <p class="text-muted-custom mb-0" style="font-size:11px;">Core Certified</p>
           </div>
         </a>
       </div>
-
-      <div class="col-md-4">
-        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
-          <div class="glass-card p-4 cert-card h-100">
-            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Marketing Analytics</h4>
-            <p class="text-muted-custom mb-0" style="font-size:12px;">University of Virginia & Darden School of Business</p>
-          </div>
-        </a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -437,11 +437,15 @@
     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 text-center text-md-start">
       <div>
         <h2 style="font-size:2.5rem; font-weight:900; font-family:'Inter Tight',sans-serif;">Let's work together</h2>
-        <p class="text-muted-custom mt-2" style="font-size:14px; max-width:400px;">Have an AI challenge? Let's discuss how I can help build the right solution.</p>
+        <p style="font-size:14px; max-width:400px; color:rgba(255,255,255,0.5); margin-top:8px;">Have an AI challenge? Let's discuss how I can help build the right solution.</p>
+        <p style="font-size:13px; color:rgba(255,255,255,0.7); margin-top:12px;">
+          📧 yuvansh2@gmail.com &nbsp;|&nbsp; 📞 (647) 861-7583 &nbsp;|&nbsp; 📍 Toronto, ON
+        </p>
       </div>
-      <div class="d-flex gap-2">
-        <a href="mailto:yuvansh2@gmail.com" style="background:white; color:var(--fg); border:none; padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px; text-decoration:none;">Email Me</a>
-        <a href="https://linkedin.com/in/yuvansh1302" target="_blank" style="background:transparent; color:white; border:1px solid rgba(255,255,255,0.2); padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px; text-decoration:none;">LinkedIn</a>
+      <div class="d-flex gap-2 flex-wrap justify-content-center">
+        <a href="mailto:yuvansh2@gmail.com" style="background:white; color:var(--fg); padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px;">Email Me</a>
+        <a href="https://linkedin.com/in/yuvansh1302" target="_blank" style="background:transparent; color:white; border:1px solid rgba(255,255,255,0.2); padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px;">LinkedIn</a>
+        <a href="https://github.com/Yuvansh1" target="_blank" style="background:transparent; color:white; border:1px solid rgba(255,255,255,0.2); padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px;">GitHub</a>
       </div>
     </div>
   </div>
