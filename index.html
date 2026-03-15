@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yuvansh Bhardwaj | AI Engineer Portfolio</title>
-
-<meta name="description" content="AI Engineer with 7+ years transforming unstructured data into intelligent systems. Specialized in designing and deploying production-grade LLM pipelines, multi-agent workflows, and RAG systems that drive measurable business impact. Proven track record delivering AI solutions across finance, retail, and healthcare.">
+<title>Yuvansh Bhardwaj | AI Engineer</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -20,23 +19,34 @@
 --fg:#111;
 --muted:#666;
 --border:#e5e5e5;
---glass-bg:rgba(255,255,255,0.6);
---glass-border:rgba(255,255,255,0.3);
+--glass-bg:rgba(255,255,255,.6);
+--glass-border:rgba(255,255,255,.3);
 }
 
-*{box-sizing:border-box;}
+.dark-mode{
+--bg:#0f0f10;
+--fg:#ffffff;
+--muted:#aaa;
+--border:#2a2a2a;
+--glass-bg:rgba(20,20,20,.6);
+--glass-border:rgba(255,255,255,.05);
+}
 
 body{
 font-family:'Inter',sans-serif;
 background:var(--bg);
 color:var(--fg);
 line-height:1.7;
-margin:0;
+overflow-x:hidden;
 }
 
 h1,h2,h3,h4{
 font-family:'Inter Tight',sans-serif;
-margin:0;
+}
+
+nav.navbar{
+backdrop-filter:blur(16px);
+background:rgba(245,245,247,.85);
 }
 
 .glass-card{
@@ -44,27 +54,12 @@ background:var(--glass-bg);
 backdrop-filter:blur(16px);
 border:1px solid var(--glass-border);
 border-radius:12px;
-}
-
-.glass-card-hover{
-transition:transform .2s ease, box-shadow .2s ease;
+padding:16px;
 }
 
 .glass-card-hover:hover{
 transform:translateY(-4px);
-box-shadow:0 12px 40px rgba(0,0,0,0.08);
-}
-
-.text-muted-custom{
-color:var(--muted);
-}
-
-.section-label{
-font-size:11px;
-font-weight:600;
-text-transform:uppercase;
-letter-spacing:.2em;
-color:var(--muted);
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
 .section-title{
@@ -72,13 +67,12 @@ font-weight:900;
 letter-spacing:-.02em;
 }
 
-.divider{
-border-top:1px solid var(--border);
+.text-muted-custom{
+color:var(--muted);
 }
 
-a{
-color:var(--fg);
-text-decoration:none;
+.divider{
+border-top:1px solid var(--border);
 }
 
 .btn-primary-custom{
@@ -97,6 +91,7 @@ padding:10px 24px;
 border-radius:50px;
 font-weight:600;
 font-size:14px;
+background:transparent;
 }
 
 .specialty-tag{
@@ -106,19 +101,42 @@ text-transform:uppercase;
 letter-spacing:.1em;
 }
 
-.bullet-dot{
-width:4px;
-height:4px;
-background:var(--fg);
-border-radius:50%;
-margin-top:10px;
-flex-shrink:0;
+.fade-in{
+opacity:0;
+transform:translateY(20px);
+transition:all .6s ease;
 }
 
-nav.navbar{
-backdrop-filter:blur(16px);
-background:rgba(245,245,247,0.8);
+.fade-in.show{
+opacity:1;
+transform:translateY(0);
 }
+
+/* HERO BACKGROUND NETWORK */
+
+.hero-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+opacity:.25;
+background-image:
+radial-gradient(circle at 20% 30%, #999 1px, transparent 1px),
+radial-gradient(circle at 70% 60%, #999 1px, transparent 1px),
+radial-gradient(circle at 40% 80%, #999 1px, transparent 1px),
+radial-gradient(circle at 80% 20%, #999 1px, transparent 1px);
+background-size:200px 200px;
+animation:networkMove 40s linear infinite;
+}
+
+@keyframes networkMove{
+from{background-position:0 0}
+to{background-position:1000px 1000px}
+}
+
+/* Portrait */
 
 .portrait-wrapper{
 position:relative;
@@ -132,10 +150,12 @@ inset:-16px;
 border-radius:16px;
 background:linear-gradient(135deg,rgba(100,130,220,.2),rgba(140,100,200,.2));
 filter:blur(24px);
+z-index:0;
 }
 
 .portrait-img-wrapper{
 position:relative;
+z-index:1;
 border-radius:16px;
 overflow:hidden;
 aspect-ratio:3/4;
@@ -147,87 +167,71 @@ height:100%;
 object-fit:cover;
 }
 
+.portrait-overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+padding:16px;
+z-index:2;
+}
+
 .cta-section{
 background:var(--fg);
 color:white;
 }
 
-.skill-group{
-border-left:2px solid var(--border);
-padding-left:16px;
-}
-
-.skill-group:hover{
-border-left-color:var(--fg);
-}
-
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<div class="hero-bg"></div>
 
 <nav class="navbar navbar-expand-lg sticky-top border-bottom">
 
 <div class="container">
 
-<a class="navbar-brand fw-bold" href="#" style="font-family:'Inter Tight',sans-serif">
-Yuvansh Portfolio
-</a>
+<a class="navbar-brand fw-bold">Yuvansh Portfolio</a>
 
-<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#nav">
 <span class="navbar-toggler-icon"></span>
 </button>
 
-<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+<div class="collapse navbar-collapse justify-content-end" id="nav">
 
-<ul class="navbar-nav gap-1">
-
-<li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+<ul class="navbar-nav gap-2">
 
 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-
+<li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
+<li class="nav-item"><a class="nav-link" href="#case-studies">Case Studies</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
 </ul>
 
+<button id="darkToggle" class="btn-outline-custom ms-3">Dark</button>
+
 </div>
+
 </div>
 
 </nav>
 
-<!-- HERO -->
-
-<section style="padding:60px 0 40px">
+<section style="padding:90px 0">
 
 <div class="container">
 
 <div class="row align-items-end">
 
-<div class="col-md-7 order-2 order-md-1">
+<div class="col-md-7">
 
-<div class="glass-card d-inline-flex px-3 py-1 mb-3" style="border-radius:50px">
-<span style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.2em;color:var(--muted)">
-AI Engineer
-</span>
-</div>
-
-<h1 class="section-title" style="font-size: clamp(2.2rem,5.5vw,4.5rem)">
+<h1 class="section-title" style="font-size:clamp(2.4rem,5vw,4.5rem)">
 Yuvansh Bhardwaj
 </h1>
 
-<p class="mt-3 text-muted-custom" style="max-width:480px">
-
-Building production grade LLM pipelines, multi agent systems, and RAG workflows.  
-7+ years delivering AI impact for Roche, Subway, GAP, Gucci and Ralph Lauren.
-
+<p class="mt-3 text-muted-custom">
+AI Engineer building production LLM pipelines, multi agent systems and RAG platforms.
 </p>
 
 <div class="mt-3 d-flex flex-wrap gap-2">
@@ -243,19 +247,15 @@ Building production grade LLM pipelines, multi agent systems, and RAG workflows.
 
 <a href="#projects" class="btn-primary-custom">View Projects</a>
 
-<a href="https://linkedin.com/in/yuvansh1302" target="_blank" class="btn-outline-custom">LinkedIn</a>
-
-<a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom">GitHub</a>
-
-<a href="mailto:yuvansh2@gmail.com" class="btn-outline-custom">Email</a>
+<a href="https://calendly.com/yuvansh2" class="btn-outline-custom">
+Book 15 min Call
+</a>
 
 </div>
 
 </div>
 
-<!-- PORTRAIT -->
-
-<div class="col-md-5 order-1 order-md-2 mb-4 mb-md-0">
+<div class="col-md-5 d-flex justify-content-center">
 
 <div class="portrait-wrapper">
 
@@ -263,7 +263,19 @@ Building production grade LLM pipelines, multi agent systems, and RAG workflows.
 
 <div class="portrait-img-wrapper">
 
-<img src="portrait.png" alt="Yuvansh Bhardwaj">
+<img src="portrait.png" alt="Yuvansh Bhardwaj — AI Engineer">
+
+<div class="portrait-overlay">
+
+<div class="glass-card">
+
+<p style="font-size:12px;font-weight:700;margin:0">
+Yuvansh Bhardwaj
+</p>
+
+<p style="font-size:10px;color:var(--muted);margin:0">
+AI Engineer | Data Scientist | GenAI Specialist
+</p>
 
 </div>
 
@@ -272,126 +284,81 @@ Building production grade LLM pipelines, multi agent systems, and RAG workflows.
 </div>
 
 </div>
+
+</div>
+
+</div>
+
 </div>
 
 </section>
 
-<!-- STATS -->
-
-<section class="py-3">
+<section id="projects" class="py-5 divider fade-in">
 
 <div class="container">
 
-<div class="row g-3">
+<h2 class="section-title">Projects</h2>
 
-<div class="col-md-3 col-6">
+<div id="githubProjects" class="row g-3 mt-4"></div>
 
-<div class="glass-card text-center p-4">
-
-<p class="section-title" style="font-size:2rem">7+</p>
-
-<p class="text-muted-custom" style="font-size:10px;text-transform:uppercase">
-Years Experience
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3 col-6">
-
-<div class="glass-card text-center p-4">
-
-<p class="section-title" style="font-size:2rem">30+</p>
-
-<p class="text-muted-custom" style="font-size:10px;text-transform:uppercase">
-Dashboards Built
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3 col-6">
-
-<div class="glass-card text-center p-4">
-
-<p class="section-title" style="font-size:2rem">5+</p>
-
-<p class="text-muted-custom" style="font-size:10px;text-transform:uppercase">
-AI Systems Deployed
-</p>
-
-</div>
-
-</div>
-
-<div class="col-md-3 col-6">
-
-<div class="glass-card text-center p-4">
-
-<p class="section-title" style="font-size:2rem">1M+</p>
-
-<p class="text-muted-custom" style="font-size:10px;text-transform:uppercase">
-Records Analyzed
-</p>
-
-</div>
-
-</div>
-
-</div>
 </div>
 
 </section>
 
-<!-- SKILLS -->
+<section id="architecture" class="py-5 divider fade-in">
 
-<section id="skills" class="py-5 divider">
+<div class="container text-center">
+
+<h2 class="section-title mb-5">AI System Architecture</h2>
+
+<div class="d-flex flex-wrap justify-content-center gap-3">
+
+<div class="glass-card">Documents</div>
+<div class="glass-card">OCR</div>
+<div class="glass-card">LLM</div>
+<div class="glass-card">Vector DB</div>
+<div class="glass-card">AI Agents</div>
+<div class="glass-card">Applications</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="case-studies" class="py-5 divider fade-in">
 
 <div class="container">
 
-<p class="section-label">Expertise</p>
+<h2 class="section-title mb-4">AI Case Studies</h2>
 
-<h2 class="section-title" style="font-size:2rem">
-Technical Skills
-</h2>
+<div class="row g-4">
 
-<div class="mt-4" style="display:grid;gap:16px">
+<div class="col-md-6">
 
-<div class="skill-group">
+<div class="glass-card">
 
-<h4 style="font-size:14px;font-weight:700">
-AI & ML
-</h4>
+<h3>LLM Document Intelligence</h3>
 
-<p class="text-muted-custom mb-0" style="font-size:13px">
-LLMs, RAG pipelines, CrewAI, LangGraph, prompt engineering, model evaluation
+<p class="text-muted-custom">
+OCR → embeddings → Pinecone vector search → LLM retrieval system reducing processing time by 95 percent.
 </p>
 
 </div>
 
-<div class="skill-group">
+</div>
 
-<h4 style="font-size:14px;font-weight:700">
-Languages
-</h4>
+<div class="col-md-6">
 
-<p class="text-muted-custom mb-0" style="font-size:13px">
-Python, SQL, R, FastAPI, TensorFlow, PyTorch
+<div class="glass-card">
+
+<h3>Multi Agent Risk Intelligence</h3>
+
+<p class="text-muted-custom">
+Planner, researcher and critic agents converting financial news into structured risk insights.
 </p>
 
 </div>
-
-<div class="skill-group">
-
-<h4 style="font-size:14px;font-weight:700">
-Cloud
-</h4>
-
-<p class="text-muted-custom mb-0" style="font-size:13px">
-AWS, Azure AI Foundry, GCP, Docker, CI/CD
-</p>
 
 </div>
 
@@ -401,7 +368,17 @@ AWS, Azure AI Foundry, GCP, Docker, CI/CD
 
 </section>
 
-<!-- CONTACT -->
+<section class="py-5 divider fade-in text-center">
+
+<div class="container">
+
+<h2 class="section-title mb-4">GitHub Activity</h2>
+
+<img src="https://ghchart.rshah.org/Yuvansh1" style="width:100%;max-width:900px">
+
+</div>
+
+</section>
 
 <section id="contact" class="cta-section py-5">
 
@@ -412,17 +389,13 @@ Let's work together
 </h2>
 
 <p style="max-width:400px;margin:auto;margin-top:10px">
-Have an AI challenge? Let's discuss how I can help.
+Have an AI challenge? Let's discuss.
 </p>
 
 <div class="mt-4 d-flex justify-content-center gap-2 flex-wrap">
 
 <a href="mailto:yuvansh2@gmail.com" style="background:white;color:black;padding:10px 24px;border-radius:50px;font-weight:600">
 Email
-</a>
-
-<a href="https://linkedin.com/in/yuvansh1302" style="border:1px solid white;padding:10px 24px;border-radius:50px;color:white">
-LinkedIn
 </a>
 
 <a href="https://github.com/Yuvansh1" style="border:1px solid white;padding:10px 24px;border-radius:50px;color:white">
@@ -435,19 +408,61 @@ GitHub
 
 </section>
 
-<footer class="py-4 divider">
-
-<div class="container text-center">
+<footer class="py-4 divider text-center">
 
 <p style="font-size:11px;color:var(--muted)">
-© 2025 Yuvansh Bhardwaj
+© 2026 Yuvansh Bhardwaj
 </p>
-
-</div>
 
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener("click",function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth"});
+});
+});
+
+document.getElementById("darkToggle").onclick=()=>{
+document.body.classList.toggle("dark-mode");
+};
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade-in").forEach(el=>{
+observer.observe(el);
+});
+
+fetch("https://api.github.com/users/Yuvansh1/repos")
+.then(res=>res.json())
+.then(data=>{
+const container=document.getElementById("githubProjects");
+data.slice(0,4).forEach(repo=>{
+container.innerHTML+=`
+<div class="col-md-6">
+<div class="glass-card glass-card-hover p-4 h-100">
+<h3 style="font-size:16px;font-weight:700">${repo.name}</h3>
+<p class="text-muted-custom">${repo.description || "AI project"}</p>
+<a href="${repo.html_url}" target="_blank" class="btn-outline-custom mt-3">
+View Repo
+</a>
+</div>
+</div>
+`;
+});
+});
+
+</script>
 
 </body>
 </html>
