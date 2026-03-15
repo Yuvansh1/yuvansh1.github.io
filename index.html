@@ -3,250 +3,464 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yuvansh Bhardwaj | Portfolio</title>
+  <title>Yuvansh Bhardwaj | AI Engineer Portfolio</title>
+  <meta name="description" content="AI Engineer with 7+ years of experience in ML, Deep Learning, and Generative AI. Building intelligent systems that solve real-world problems at scale.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    .profile-pic {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    :root {
+      --bg: #f5f5f7;
+      --fg: #111;
+      --muted: #666;
+      --border: #e5e5e5;
+      --glass-bg: rgba(255,255,255,0.6);
+      --glass-border: rgba(255,255,255,0.3);
     }
-    .card {
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
     }
-    .card:hover {
-      transform: translateY(-5px);
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Inter Tight', sans-serif;
+    }
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+    .text-muted-custom { color: var(--muted); }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+    }
+    .section-title {
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+    .skill-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 13px;
+      border-radius: 8px;
+      margin: 3px;
+    }
+    .cert-card {
+      transition: transform 0.2s ease;
+    }
+    .cert-card:hover {
+      transform: translateY(-4px);
+    }
+    .divider { border-top: 1px solid var(--border); }
+    a { color: var(--fg); }
+    .btn-primary-custom {
+      background: var(--fg);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-custom {
+      background: transparent;
+      color: var(--fg);
+      border: 1px solid var(--border);
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-family: 'Inter Tight', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-outline-custom:hover { border-color: var(--fg); }
+    .hero-section {
+      padding: 80px 0 60px;
+    }
+    .cta-section {
+      background: var(--fg);
+      color: white;
+    }
+    .cta-section .text-muted-custom { color: rgba(255,255,255,0.5); }
+    .experience-item + .experience-item { border-top: 1px solid var(--border); }
+    nav.navbar { backdrop-filter: blur(16px); background: rgba(245,245,247,0.8); }
+    .bullet-dot {
+      width: 4px; height: 4px; border-radius: 50%; background: var(--fg);
+      margin-top: 10px; flex-shrink: 0;
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Yuvansh Bhardwaj</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top border-bottom" style="border-color: var(--border) !important;">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#" style="font-family: 'Inter Tight', sans-serif;">Yuvansh<span style="color: #ccc;">.</span></a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-1">
+        <li class="nav-item"><a class="nav-link" href="#about" style="font-size:13px;">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills" style="font-size:13px;">Skills</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience" style="font-size:13px;">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects" style="font-size:13px;">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education" style="font-size:13px;">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications" style="font-size:13px;">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact" style="font-size:13px;">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-section">
+  <div class="container">
+    <p class="section-label mb-2">AI Engineer</p>
+    <h1 class="section-title" style="font-size: clamp(2.2rem, 5.5vw, 4.5rem); line-height: 1;">Yuvansh Bhardwaj</h1>
+    <p class="mt-3 text-muted-custom" style="max-width: 480px; font-size: 15px;">
+      An AI Engineer building intelligent systems that solve real-world problems at scale.
+    </p>
+    <div class="mt-4 d-flex gap-2 flex-wrap">
+      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Multi-Agent AI</span>
+      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">LLM Pipelines</span>
+      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">Production ML</span>
+      <span class="glass-card px-3 py-1" style="font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted);">RAG Systems</span>
+    </div>
+    <div class="mt-4 d-flex gap-2">
+      <a href="#projects" class="btn-primary-custom">View Projects</a>
+      <a href="https://linkedin.com/in/yuvansh1302" target="_blank" class="btn-outline-custom">LinkedIn</a>
+      <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom">GitHub</a>
+      <a href="mailto:yuvansh2@gmail.com" class="btn-outline-custom">Email</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="py-4">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">7+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Years Experience</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">30+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Dashboards Built</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">5+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">AI Systems Deployed</p></div></div>
+      <div class="col-6 col-md-3"><div class="glass-card text-center p-4"><p class="section-title mb-0" style="font-size:2rem;">1M+</p><p class="text-muted-custom mb-0" style="font-size:10px; text-transform:uppercase; letter-spacing:0.15em; font-weight:600;">Records Analyzed</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="py-5">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title mt-1" style="font-size:2rem;">About Me</h2>
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <p class="text-muted-custom" style="font-size:15px;">
+          I am an AI Engineer with 7+ years of experience across advanced analytics, machine learning, deep learning, and Generative AI. My work spans banking, retail, and healthcare. I specialize in building scalable AI systems, LLM pipelines, and cloud-native ML apps that deliver measurable business outcomes. My strengths lie in translating complex technical challenges into practical business solutions, and I am passionate about mentoring and driving AI adoption across organizations.
+        </p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <header class="bg-primary text-white text-center py-5">
-    <div class="container">
-      <img src="1767712113925.jpg" alt="Yuvansh Bhardwaj" class="profile-pic mb-3">
-      <h1>Yuvansh Bhardwaj</h1>
-      <p class="lead">AI Engineer | Data Scientist | Generative AI Specialist</p>
-      <a href="https://www.linkedin.com/in/yuvansh1302" class="btn btn-light btn-sm">LinkedIn</a>
-      <a href="https://github.com/Yuvansh1" class="btn btn-light btn-sm">GitHub</a>
-      <a href="mailto:yuvansh2@gmail.com" class="btn btn-light btn-sm">Email</a>
-    </div>
-  </header>
-
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2>About</h2>
-      <p>I am an AI Engineer with 7+ years of experience across advanced analytics, machine learning, deep learning, and Generative AI. My work spans banking, retail, and healthcare. I specialize in building scalable AI systems, LLM pipelines, and cloud-native ML apps that deliver measurable business outcomes. My strengths lie in translating complex technical challenges into practical business solutions, and I am passionate about mentoring and driving AI adoption across organizations.</p>
-    </div>
-  </section>
-
-  <section id="skills" class="bg-light py-5">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <ul>
-            <li>Python, R, SQL</li>
-            <li>PyTorch, Hugging Face, XGBoost</li>
-            <li>Machine Learning & Deep Learning</li>
-            <li>Natural Language Processing (NLP)</li>
-            <li>RAG, LLM Fine-Tuning, Prompt Engineering</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <ul>
-            <li>AWS, Azure, Docker, CI/CD, IaC</li>
-            <li>Snowflake, BigQuery, MySQL, DBT</li>
-            <li>Tableau, PySpark, Alteryx</li>
-            <li>Cloud Migration & ML Pipelines</li>
-            <li>Statistical Analysis, A/B Testing</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="py-5">
-    <div class="container">
-      <h2>Work Experience</h2>
-
-      <div class="mb-4">
-        <h5>Roche | Data & Analytics Specialist</h5>
-        <p><em>Mississauga, ON, Canada | Mar 2024 – Present</em></p>
-        <ul>
-          <li>Built an OCR + LLM pipeline using Tesseract, LangChain, Gemini API and GenAI techniques like prompt engineering to extract structured data from scanned lab reports, reducing manual processing by 60%.</li>
-          <li>Designed and deployed an AI agent with RAG and few-shot learning, integrated via Google APIs on Azure Cloud environment, delivering real-time, context-aware responses for the security team (Microsoft AI Hackathon winner).</li>
-          <li>Designed 30+ KPI visualizations in Tableau cloud environment by transforming raw datasets into actionable metrics using SQL and Python, enabled faster, data-backed executive decisions and improving dashboard performance by 80%.</li>
-        </ul>
-      </div>
-
-      <div class="mb-4">
-        <h5>Hays Recruitment (Subway) | Data Analytics Consultant</h5>
-        <p><em>Toronto, ON, Canada | Jul 2023 – Oct 2023</em></p>
-        <ul>
-          <li>Automated AI workflows using Python for pricing strategy, integrating directly into client systems, saving ~$200K annually.</li>
-          <li>Applied NLP techniques and LLM models to analyze large-scale customer feedbacks, uncovered key themes around pricing perception and informed loyalty strategy improvements.</li>
-          <li>Cleaned and transformed over 1 million rows of big data using SQL and PySpark, then visualized actionable trends across provinces in Tableau to support regional business decisions.</li>
-        </ul>
-      </div>
-
-      <div class="mb-4">
-        <h5>Nagarro | Associate Staff Engineer, Data Analytics</h5>
-        <p><em>Gurgaon, Haryana, India | Aug 2021 – Aug 2022</em></p>
-        <ul>
-          <li>Led a team of 10 AI-driven data analysts and data engineers to run data experiments and evaluate marketing impact using Agile sprints, A/B testing, and campaign attribution modeling.</li>
-          <li>Worked with major clients including GAP to develop interactive sales and growth reports using Artificial Intelligence-Supported Google Looker Studio, which enhanced transparency and improved real-time decision-making for retail stores.</li>
-          <li>Improved customer journey checkout funnel conversion by 15% through end-to-end analysis of customer behavior data, identified key drop-off points using Google Analytics and behavioral segmentation.</li>
-        </ul>
-      </div>
-
-      <div class="mb-4">
-        <h5>Publicis Sapient | Associate Data Analytics L1</h5>
-        <p><em>Gurgaon, Haryana, India | Dec 2019 – May 2021</em></p>
-        <ul>
-          <li>Built time series models with additional regressor based on seasonality factor in Python and R to forecast ROAS for retail clients like Gucci, Lacoste and Ralph Lauren, achieved 90% accuracy and informed quarterly budget planning.</li>
-          <li>Developed automated reporting pipelines with Alteryx and BigQuery, delivering weekly performance insights and driving a 5,000-unit increase in quarterly output through data-backed strategy shifts.</li>
-        </ul>
-      </div>
-
-      <div class="mb-4">
-        <h5>Cars24 | Associate III, BI & Strategy</h5>
-        <p><em>Gurgaon, Haryana, India | Sep 2018 – Dec 2019</em></p>
-        <ul>
-          <li>Migrated analytics infrastructure from MySQL to Snowflake using Python and Alteryx, improved pipeline performance, and trained client teams to enable scalable self-service analytics.</li>
-          <li>Built a Markov Chain statistical model to quantify customer journey transitions, identified drop-off points, and shaped strategies to improve lead conversion.</li>
-        </ul>
-      </div>
-
-      <div class="mb-4">
-        <h5>Digitalberge | Associate Analyst</h5>
-        <p><em>Delhi, India | Apr 2017 – Sep 2018</em></p>
-        <ul>
-          <li>Built a scalable web scraper in Python (using Scrapy framework and BeautifulSoup library), deployed on AWS Lambda and EC2.</li>
-          <li>Collaborated with SEO/PPC teams to turn scraped data into actionable campaign insights, blending engineering and data interpretation.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="bg-light py-5">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col"><div class="card h-100 p-3"><h5>Customer Churn Prediction</h5><p>Implemented AutoML with XGBoost on a dataset of 50,000+ customer records, reducing churn by 17% and helping the business retain ~1,200 customers per quarter. Automated feature selection and hyperparameter tuning to accelerate model development and delivered actionable insights that guided retention strategies.</p><a href="https://github.com/Yuvansh1/Media_Analytics_Automation_Python/blob/master/Yuvansh_Customer_Churn_Prediction.ipynb" class="btn btn-primary btn-sm">View Project</a></div></div>
-        <div class="col"><div class="card h-100 p-3"><h5>Pharma AI Web App</h5><p>Built a Flask-based application powered by Gemini LLM and real-time Wikipedia scraping to generate concise, evidence-backed clinical summaries. Integrated OCR preprocessing and a prompt-engineering pipeline that reduced manual report review time by ~60%, enabling healthcare professionals to make faster, data-driven decisions.</p><a href="https://docs.google.com/presentation/d/1HpNH6wkC31nNTAUBXGenIy0WxDMY_xWYf1R5X5-v0MY/edit?usp=sharing" class="btn btn-primary btn-sm">View Demo</a></div></div>
-        <div class="col"><div class="card h-100 p-3"><h5>Online Growth Marketing Report</h5><p>Developed a Google Looker Studio dashboard integrating data from 10+ marketing channels, cutting reporting time by 40%. Insights from the dashboard enabled refined campaigns that increased conversions by 15%, translating to ~8,000 additional sign-ups in three months.</p><a href="https://lookerstudio.google.com/reporting/9c685b57-e557-43cb-acd8-c3af98d257b3/page/pEauC" class="btn btn-primary btn-sm">View Report</a></div></div>
-        <div class="col"><div class="card h-100 p-3"><h5>PDF Data Extraction AI Agent</h5><p>Developed a Python AI agent using Gemini 1.5 Flash to extract structured JSON from PDFs with a strict schema. Designed JSON-only prompts, salvage parsing, and normalization routines to ensure clean outputs ready for downstream analytics.</p><a href="https://github.com/Yuvansh1/Media_Analytics_Automation_Python/blob/master/GenAI%20Projects/ai_agent_pdf_extract.py" class="btn btn-primary btn-sm">View Code</a></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" class="py-5">
-    <div class="container">
-      <h2>Education</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col"><div class="card p-3 h-100"><h5>University of Ottawa</h5><p><em>Generative AI Professional Certificate</em></p><p>Relevant Coursework: Generative AI for Cybersecurity, Introduction to Generative AI, Prompting and Application Development, Fine-Tuning Large Language Models, Retrieval-Augmented Generation, Generative AI Capstone.</p></div></div>
-        <div class="col"><div class="card p-3 h-100"><h5>Georgian College, Barrie Campus</h5><p><em>Post-Graduate Certificate in Artificial Intelligence</em></p><p>Relevant Coursework: Machine Learning, Advanced Data Analysis, NLP, Deep Learning, AI for Decision Making, AI Algorithms and Mathematics, Reinforcement Learning, Neural Networks, Conversational AI.</p></div></div>
-        <div class="col"><div class="card p-3 h-100"><h5>I.K. Gujral Punjab Technical University</h5><p><em>B.Tech in Computer Science Engineering<br>Aug 2013 – Apr 2017</em></p><p>Relevant Coursework: Data Structures, Engineering Mathematics, OOPS Concepts, Operating Systems, RDBMS Labs, Software Engineering, Cloud Computing.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="certifications" class="py-5">
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-
-        <div class="col">
-          <div class="card p-3 h-100">
-            <h5>Columbia University - Prompt Engineering & Programming with OpenAI</h5>
-            <p><em>Issued Aug 2025</em></p>
-            <p>Gained hands-on experience designing prompts, integrating LLMs via OpenAI API, and building real-world AI applications with LangChain and LlamaIndex.</p>
-            <a href="https://badges.plus.columbia.edu/3a0f2021-d7d4-4bd2-8a86-02ac328f63f6#acc.o1HsmeUu" class="btn btn-primary btn-sm">View Credential</a>
+<!-- Skills -->
+<section id="skills" class="py-5 divider">
+  <div class="container">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title mt-1" style="font-size:2rem;">Skills</h2>
+    <div class="row mt-4 g-3">
+      <div class="col-md-6">
+        <div class="glass-card p-4">
+          <h4 style="font-size:14px; font-weight:700;">AI & Machine Learning</h4>
+          <div class="mt-2">
+            <span class="skill-tag glass-card">Python</span>
+            <span class="skill-tag glass-card">R</span>
+            <span class="skill-tag glass-card">SQL</span>
+            <span class="skill-tag glass-card">PyTorch</span>
+            <span class="skill-tag glass-card">Hugging Face</span>
+            <span class="skill-tag glass-card">XGBoost</span>
+            <span class="skill-tag glass-card">Machine Learning</span>
+            <span class="skill-tag glass-card">Deep Learning</span>
+            <span class="skill-tag glass-card">NLP</span>
+            <span class="skill-tag glass-card">RAG</span>
+            <span class="skill-tag glass-card">LLM Fine-Tuning</span>
+            <span class="skill-tag glass-card">Prompt Engineering</span>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card p-3 h-100">
-            <h5>Machine Learning Specialization – Coursera (Andrew Ng, DeepLearning.AI)</h5>
-            <p><em>Issued Jul 2024</em></p>
-            <p>Covered supervised learning, unsupervised learning, recommender systems, and reinforcement learning with real-world Python projects.</p>
-            <a href="https://www.coursera.org/account/accomplishments/specialization/9N3HLA5UMDRK" class="btn btn-primary btn-sm">View Credential</a>
+      </div>
+      <div class="col-md-6">
+        <div class="glass-card p-4">
+          <h4 style="font-size:14px; font-weight:700;">Cloud & Data Engineering</h4>
+          <div class="mt-2">
+            <span class="skill-tag glass-card">AWS</span>
+            <span class="skill-tag glass-card">Azure</span>
+            <span class="skill-tag glass-card">Docker</span>
+            <span class="skill-tag glass-card">CI/CD</span>
+            <span class="skill-tag glass-card">Snowflake</span>
+            <span class="skill-tag glass-card">BigQuery</span>
+            <span class="skill-tag glass-card">MySQL</span>
+            <span class="skill-tag glass-card">DBT</span>
+            <span class="skill-tag glass-card">Tableau</span>
+            <span class="skill-tag glass-card">PySpark</span>
+            <span class="skill-tag glass-card">Alteryx</span>
+            <span class="skill-tag glass-card">A/B Testing</span>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card p-3 h-100">
-            <h5>Generative AI for Everyone</h5>
-            <p>What generative AI is and how it works, its common use cases, and what this technology can and cannot do.</p>
-            <a href="https://www.coursera.org/account/accomplishments/verify/HDGBANV4DZQ4" class="btn btn-primary btn-sm">View Credential</a>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card p-3 h-100">
-            <h5>Artificial Intelligence using Python - NIELIT</h5>
-            <p>Hands-on program focused on building AI models and solving problems using Python libraries and techniques.</p>
-            <a href="https://www.linkedin.com/posts/yuvansh-bhardwaj-4a8a98a2_nielit-ai-python-certfication-activity-6719138196569030656-_ynC/" class="btn btn-primary btn-sm">View Credential</a>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card p-3 h-100">
-            <h5>University of Virginia & Darden School of Business - Marketing Analytics</h5>
-            <p>How to measure customer lifetime value  and use that information to evaluate strategic marketing alternatives </p>
-            <a href="https://www.coursera.org/account/accomplishments/verify/TEP72USKNYMD" class="btn btn-primary btn-sm">View Credential</a>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card p-3 h-100">
-            <h5>University of Virginia & Darden School of Business - Marketing Analytics</h5>
-            <p>How to measure customer lifetime value  and use that information to evaluate strategic marketing alternatives </p>
-            <a href="https://www.coursera.org/account/accomplishments/verify/TEP72USKNYMD" class="btn btn-primary btn-sm">View Credential</a>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact" class="bg-light py-5">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:yuvansh2@gmail.com">yuvansh2@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/yuvansh1302">linkedin.com/in/yuvansh1302</a></p>
-      <p>GitHub: <a href="https://github.com/Yuvansh1">github.com/Yuvansh1</a></p>
+<!-- Experience -->
+<section id="experience" class="py-5 divider">
+  <div class="container">
+    <p class="section-label">Career</p>
+    <h2 class="section-title mt-1" style="font-size:2rem;">Work Experience</h2>
+    <div class="mt-4">
+
+      <div class="experience-item py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div><h3 style="font-size:16px; font-weight:700;">Roche <span style="font-weight:400; color:var(--muted);">| Data & Analytics Specialist</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Mississauga, ON, Canada</p></div>
+          <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Mar 2024 – Present</p>
+        </div>
+        <ul class="mt-2" style="list-style:none; padding-left:0;">
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built an OCR + LLM pipeline using Tesseract, LangChain, Gemini API and GenAI techniques like prompt engineering to extract structured data from scanned lab reports, reducing manual processing by 60%.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Designed and deployed an AI agent with RAG and few-shot learning, integrated via Google APIs on Azure Cloud, delivering real-time, context-aware responses for the security team (Microsoft AI Hackathon winner).</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Designed 30+ KPI visualizations in Tableau cloud environment by transforming raw datasets into actionable metrics using SQL and Python, improving dashboard performance by 80%.</span></li>
+        </ul>
+      </div>
+
+      <div class="experience-item py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div><h3 style="font-size:16px; font-weight:700;">Hays Recruitment (Subway) <span style="font-weight:400; color:var(--muted);">| Data Analytics Consultant</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Toronto, ON, Canada</p></div>
+          <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Jul 2023 – Oct 2023</p>
+        </div>
+        <ul class="mt-2" style="list-style:none; padding-left:0;">
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Automated AI workflows using Python for pricing strategy, integrating directly into client systems, saving ~$200K annually.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Applied NLP techniques and LLM models to analyze large-scale customer feedbacks, uncovered key themes around pricing perception and informed loyalty strategy improvements.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Cleaned and transformed over 1 million rows of big data using SQL and PySpark, then visualized actionable trends across provinces in Tableau.</span></li>
+        </ul>
+      </div>
+
+      <div class="experience-item py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div><h3 style="font-size:16px; font-weight:700;">Nagarro <span style="font-weight:400; color:var(--muted);">| Associate Staff Engineer, Data Analytics</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Gurgaon, India</p></div>
+          <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Aug 2021 – Aug 2022</p>
+        </div>
+        <ul class="mt-2" style="list-style:none; padding-left:0;">
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Led a team of 10 AI-driven data analysts and data engineers to run data experiments using Agile sprints, A/B testing, and campaign attribution modeling.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Worked with major clients including GAP to develop interactive sales and growth reports using AI-Supported Google Looker Studio.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Improved customer journey checkout funnel conversion by 15% through end-to-end analysis of customer behavior data.</span></li>
+        </ul>
+      </div>
+
+      <div class="experience-item py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div><h3 style="font-size:16px; font-weight:700;">Publicis Sapient <span style="font-weight:400; color:var(--muted);">| Associate Data Analytics L1</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Gurgaon, India</p></div>
+          <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Dec 2019 – May 2021</p>
+        </div>
+        <ul class="mt-2" style="list-style:none; padding-left:0;">
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built time series models in Python and R to forecast ROAS for retail clients like Gucci, Lacoste and Ralph Lauren, achieved 90% accuracy.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Developed automated reporting pipelines with Alteryx and BigQuery, driving a 5,000-unit increase in quarterly output.</span></li>
+        </ul>
+      </div>
+
+      <div class="experience-item py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div><h3 style="font-size:16px; font-weight:700;">Cars24 <span style="font-weight:400; color:var(--muted);">| Associate III, BI & Strategy</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Gurgaon, India</p></div>
+          <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Sep 2018 – Dec 2019</p>
+        </div>
+        <ul class="mt-2" style="list-style:none; padding-left:0;">
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Migrated analytics infrastructure from MySQL to Snowflake using Python and Alteryx, improved pipeline performance.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built a Markov Chain statistical model to quantify customer journey transitions and improve lead conversion.</span></li>
+        </ul>
+      </div>
+
+      <div class="experience-item py-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between">
+          <div><h3 style="font-size:16px; font-weight:700;">Digitalberge <span style="font-weight:400; color:var(--muted);">| Associate Analyst</span></h3><p class="text-muted-custom mb-0" style="font-size:12px;">Delhi, India</p></div>
+          <p class="text-muted-custom mb-0" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">Apr 2017 – Sep 2018</p>
+        </div>
+        <ul class="mt-2" style="list-style:none; padding-left:0;">
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Built a scalable web scraper in Python (Scrapy, BeautifulSoup), deployed on AWS Lambda and EC2.</span></li>
+          <li class="d-flex gap-2 mb-2" style="font-size:14px; color:var(--muted);"><span class="bullet-dot"></span><span>Collaborated with SEO/PPC teams to turn scraped data into actionable campaign insights.</span></li>
+        </ul>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="text-center py-3 bg-dark text-white">
-    <p>© 2025 Yuvansh Bhardwaj | Built with GitHub Pages and Bootstrap</p>
-  </footer>
+<!-- Projects -->
+<section id="projects" class="py-5 divider">
+  <div class="container">
+    <p class="section-label">Work</p>
+    <h2 class="section-title mt-1" style="font-size:2rem;">Projects</h2>
+    <div class="row mt-4 g-3">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="col-md-6">
+        <div class="glass-card p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">Customer Churn Prediction</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Implemented AutoML with XGBoost on a dataset of 50,000+ customer records, reducing churn by 17% and helping the business retain ~1,200 customers per quarter. Automated feature selection and hyperparameter tuning to accelerate model development.</p>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Project</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">Pharma AI Web App</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Built a Flask-based application powered by Gemini LLM and real-time Wikipedia scraping to generate concise, evidence-backed clinical summaries. Integrated OCR preprocessing and a prompt-engineering pipeline that reduced manual report review time by ~60%.</p>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Demo</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">Online Growth Marketing Report</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Developed a Google Looker Studio dashboard integrating data from 10+ marketing channels, cutting reporting time by 40%. Insights enabled refined campaigns that increased conversions by 15%, translating to ~8,000 additional sign-ups in three months.</p>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Report</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="glass-card p-4 h-100">
+          <h3 style="font-size:16px; font-weight:700;">PDF Data Extraction AI Agent</h3>
+          <p class="text-muted-custom mt-2" style="font-size:14px;">Developed a Python AI agent using Gemini 1.5 Flash to extract structured JSON from PDFs with a strict schema. Designed JSON-only prompts, salvage parsing, and normalization routines to ensure clean outputs ready for downstream analytics.</p>
+          <a href="https://github.com/Yuvansh1" target="_blank" class="btn-outline-custom mt-3" style="font-size:12px; padding:6px 16px;">View Code</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="py-5 divider">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <h2 class="section-title mt-1" style="font-size:2rem;">Education</h2>
+    <div class="mt-4">
+
+      <div class="experience-item py-4">
+        <h3 style="font-size:16px; font-weight:700;">University of Ottawa</h3>
+        <p style="font-size:14px; font-weight:500;">Generative AI Professional Certificate</p>
+        <p class="text-muted-custom mt-1" style="font-size:13px;"><strong>Relevant Coursework:</strong> Generative AI for Cybersecurity, Introduction to Generative AI, Prompting and Application Development, Fine-Tuning Large Language Models, Retrieval-Augmented Generation, Generative AI Capstone.</p>
+      </div>
+
+      <div class="experience-item py-4">
+        <h3 style="font-size:16px; font-weight:700;">Georgian College, Barrie Campus</h3>
+        <p style="font-size:14px; font-weight:500;">Post-Graduate Certificate in Artificial Intelligence</p>
+        <p class="text-muted-custom mt-1" style="font-size:13px;"><strong>Relevant Coursework:</strong> Machine Learning, Advanced Data Analysis, NLP, Deep Learning, AI for Decision Making, AI Algorithms and Mathematics, Reinforcement Learning, Neural Networks, Conversational AI.</p>
+      </div>
+
+      <div class="experience-item py-4">
+        <h3 style="font-size:16px; font-weight:700;">I.K. Gujral Punjab Technical University</h3>
+        <p style="font-size:14px; font-weight:500;">B.Tech in Computer Science Engineering</p>
+        <p class="text-muted-custom" style="font-size:12px;">Aug 2013 – Apr 2017</p>
+        <p class="text-muted-custom mt-1" style="font-size:13px;"><strong>Relevant Coursework:</strong> Data Structures, Engineering Mathematics, OOPS Concepts, Operating Systems, RDBMS Labs, Software Engineering, Cloud Computing.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications" class="py-5 divider">
+  <div class="container">
+    <p class="section-label">Credentials</p>
+    <h2 class="section-title mt-1" style="font-size:2rem;">Certifications</h2>
+    <div class="row mt-4 g-3">
+
+      <div class="col-md-4">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
+          <div class="glass-card p-4 cert-card h-100">
+            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Prompt Engineering & Programming with OpenAI</h4>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">Columbia University · Aug 2025</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
+          <div class="glass-card p-4 cert-card h-100">
+            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Machine Learning Specialization</h4>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">Coursera (Andrew Ng, DeepLearning.AI) · Jul 2024</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
+          <div class="glass-card p-4 cert-card h-100">
+            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Generative AI for Everyone</h4>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">DeepLearning.AI</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
+          <div class="glass-card p-4 cert-card h-100">
+            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Artificial Intelligence using Python</h4>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">NIELIT</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a href="https://www.linkedin.com/in/yuvansh1302" target="_blank" class="text-decoration-none">
+          <div class="glass-card p-4 cert-card h-100">
+            <h4 style="font-size:14px; font-weight:700; color:var(--fg);">Marketing Analytics</h4>
+            <p class="text-muted-custom mb-0" style="font-size:12px;">University of Virginia & Darden School of Business</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section id="contact" class="cta-section py-5">
+  <div class="container py-4">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4 text-center text-md-start">
+      <div>
+        <h2 style="font-size:2.5rem; font-weight:900; font-family:'Inter Tight',sans-serif;">Let's work together</h2>
+        <p class="text-muted-custom mt-2" style="font-size:14px; max-width:400px;">Have an AI challenge? Let's discuss how I can help build the right solution.</p>
+      </div>
+      <div class="d-flex gap-2">
+        <a href="mailto:yuvansh2@gmail.com" style="background:white; color:var(--fg); border:none; padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px; text-decoration:none;">Email Me</a>
+        <a href="https://linkedin.com/in/yuvansh1302" target="_blank" style="background:transparent; color:white; border:1px solid rgba(255,255,255,0.2); padding:10px 24px; border-radius:50px; font-family:'Inter Tight',sans-serif; font-weight:600; font-size:14px; text-decoration:none;">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4 divider">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="mb-0" style="font-size:11px; color:var(--muted);">© 2025 Yuvansh Bhardwaj. All rights reserved.</p>
+      <div class="d-flex gap-3">
+        <a href="https://linkedin.com/in/yuvansh1302" target="_blank" style="color:var(--muted); font-size:13px;">LinkedIn</a>
+        <a href="https://github.com/Yuvansh1" target="_blank" style="color:var(--muted); font-size:13px;">GitHub</a>
+        <a href="mailto:yuvansh2@gmail.com" style="color:var(--muted); font-size:13px;">Email</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
