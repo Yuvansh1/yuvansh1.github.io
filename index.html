@@ -19,8 +19,8 @@
 --fg:#111;
 --muted:#666;
 --border:#e5e5e5;
---glass-bg:rgba(255,255,255,.6);
---glass-border:rgba(255,255,255,.25);
+--glass-bg:rgba(255,255,255,.7);
+--glass-border:rgba(255,255,255,.3);
 }
 
 .dark-mode{
@@ -28,7 +28,7 @@
 --fg:#fff;
 --muted:#aaa;
 --border:#2a2a2a;
---glass-bg:rgba(20,20,20,.6);
+--glass-bg:rgba(20,20,20,.7);
 --glass-border:rgba(255,255,255,.05);
 }
 
@@ -39,18 +39,17 @@ color:var(--fg);
 line-height:1.7;
 }
 
-h1,h2,h3,h4{
+h1,h2,h3{
 font-family:'Inter Tight',sans-serif;
 }
 
 nav.navbar{
-backdrop-filter:blur(16px);
+backdrop-filter:blur(14px);
 background:rgba(245,245,247,.85);
 }
 
 .section-title{
 font-weight:900;
-letter-spacing:-.02em;
 }
 
 .text-muted-custom{
@@ -65,17 +64,13 @@ border-top:1px solid var(--border);
 background:var(--glass-bg);
 border:1px solid var(--glass-border);
 border-radius:12px;
-padding:18px;
+padding:20px;
 backdrop-filter:blur(10px);
-}
-
-.skill-card{
-transition:.25s;
 }
 
 .skill-card:hover{
 transform:translateY(-4px);
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .btn-primary-custom{
@@ -83,14 +78,14 @@ background:var(--fg);
 color:white;
 border:none;
 padding:10px 24px;
-border-radius:50px;
+border-radius:40px;
 font-weight:600;
 }
 
 .btn-outline-custom{
 border:1px solid var(--border);
 padding:10px 24px;
-border-radius:50px;
+border-radius:40px;
 font-weight:600;
 background:transparent;
 }
@@ -98,24 +93,9 @@ background:transparent;
 .specialty-tag{
 padding:6px 12px;
 font-size:11px;
-text-transform:uppercase;
-letter-spacing:.1em;
 background:var(--glass-bg);
-border-radius:30px;
+border-radius:20px;
 }
-
-.fade-in{
-opacity:0;
-transform:translateY(20px);
-transition:.6s;
-}
-
-.fade-in.show{
-opacity:1;
-transform:none;
-}
-
-/* portrait */
 
 .portrait-wrapper{
 position:relative;
@@ -125,9 +105,9 @@ margin:auto;
 
 .portrait-glow{
 position:absolute;
-inset:-18px;
-border-radius:16px;
-background:linear-gradient(135deg,#7aa6ff,#9f7cff);
+inset:-20px;
+border-radius:20px;
+background:linear-gradient(135deg,#6d8cff,#a68bff);
 filter:blur(40px);
 opacity:.25;
 }
@@ -149,32 +129,14 @@ position:absolute;
 bottom:0;
 left:0;
 right:0;
-padding:16px;
+padding:18px;
 }
 
 .overlay-card{
-background:rgba(0,0,0,.65);
+background:rgba(0,0,0,.7);
 color:white;
 border-radius:10px;
-padding:12px;
-backdrop-filter:blur(10px);
-}
-
-/* architecture blocks */
-
-.pipeline{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-}
-
-.pipeline div{
-padding:12px 18px;
-border-radius:10px;
-background:var(--glass-bg);
-border:1px solid var(--glass-border);
-font-weight:500;
+padding:14px;
 }
 
 .cta-section{
@@ -196,7 +158,7 @@ color:white;
 
 <a class="navbar-brand fw-bold">Yuvansh Portfolio</a>
 
-<button class="navbar-toggler border-0" data-bs-toggle="collapse" data-bs-target="#nav">
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
 <span class="navbar-toggler-icon"></span>
 </button>
 
@@ -206,8 +168,6 @@ color:white;
 
 <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
 <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-<li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
-<li class="nav-item"><a class="nav-link" href="#case">Case Studies</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
 </ul>
@@ -230,29 +190,29 @@ color:white;
 
 <div class="col-md-7">
 
-<h1 class="section-title" style="font-size:clamp(2.4rem,5vw,4.5rem)">
+<h1 style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900">
 Yuvansh Bhardwaj
 </h1>
 
-<p class="mt-3 text-muted-custom">
-AI Engineer building production LLM pipelines, multi agent systems and RAG platforms.
+<p class="text-muted-custom mt-3">
+AI Engineer with 7+ years transforming unstructured data into intelligent systems. Specialized in designing and deploying production-grade LLM pipelines, multi-agent workflows, and RAG systems that drive measurable business impact. Proven track record delivering AI solutions across marketing, finance, retail, and healthcare.
 </p>
 
-<div class="mt-3 d-flex gap-2 flex-wrap">
+<div class="mt-3 d-flex flex-wrap gap-2">
 
-<span class="specialty-tag">Multi Agent AI</span>
+<span class="specialty-tag">Agentic AI</span>
+<span class="specialty-tag">RAG Systems</span>
 <span class="specialty-tag">LLM Pipelines</span>
 <span class="specialty-tag">Production ML</span>
-<span class="specialty-tag">RAG Systems</span>
 
 </div>
 
-<div class="mt-4 d-flex gap-2">
+<div class="mt-4 d-flex gap-3">
 
 <a href="#projects" class="btn-primary-custom">View Projects</a>
 
-<a href="https://calendly.com/yuvansh2" class="btn-outline-custom">
-Book 15 min Call
+<a href="https://linkedin.com/in/yuvansh1302" class="btn-outline-custom">
+LinkedIn
 </a>
 
 </div>
@@ -273,9 +233,7 @@ Book 15 min Call
 
 <div class="overlay-card">
 
-<p style="margin:0;font-weight:700">
-Yuvansh Bhardwaj
-</p>
+<p style="margin:0;font-weight:700">Yuvansh Bhardwaj</p>
 
 <p style="margin:0;font-size:12px">
 AI Engineer | Data Scientist | GenAI Specialist
@@ -299,7 +257,7 @@ AI Engineer | Data Scientist | GenAI Specialist
 
 <!-- SKILLS -->
 
-<section id="skills" class="py-5 divider fade-in">
+<section id="skills" class="py-5 divider">
 
 <div class="container">
 
@@ -308,75 +266,43 @@ AI Engineer | Data Scientist | GenAI Specialist
 <div class="row g-4">
 
 <div class="col-md-3">
-
 <div class="glass-card skill-card">
-
-<h4>AI / LLM</h4>
-
-<p class="text-muted-custom">
-LangChain  
-CrewAI  
-LangGraph  
-Prompt Engineering  
-LLM Evaluation
-</p>
-
+<h4>Agentic AI</h4>
+LangGraph<br>
+CrewAI<br>
+LangChain<br>
+Prompt Engineering
 </div>
-
 </div>
 
 <div class="col-md-3">
-
 <div class="glass-card skill-card">
-
 <h4>Machine Learning</h4>
-
-<p class="text-muted-custom">
-Python  
-PyTorch  
-TensorFlow  
-XGBoost  
-AutoML
-</p>
-
+Python<br>
+PyTorch<br>
+TensorFlow<br>
+XGBoost
 </div>
-
 </div>
 
 <div class="col-md-3">
-
 <div class="glass-card skill-card">
-
 <h4>Cloud</h4>
-
-<p class="text-muted-custom">
-AWS  
-Azure AI Foundry  
-GCP  
-Docker  
-CI/CD
-</p>
-
+AWS ECS Fargate<br>
+Azure AI Foundry<br>
+GCP Vertex AI<br>
+Docker
 </div>
-
 </div>
 
 <div class="col-md-3">
-
 <div class="glass-card skill-card">
-
 <h4>Data</h4>
-
-<p class="text-muted-custom">
-Snowflake  
-Pinecone  
-BigQuery  
-SQL  
+Snowflake<br>
+Pinecone<br>
+BigQuery<br>
 PySpark
-</p>
-
 </div>
-
 </div>
 
 </div>
@@ -387,77 +313,49 @@ PySpark
 
 <!-- PROJECTS -->
 
-<section id="projects" class="py-5 divider fade-in">
+<section id="projects" class="py-5 divider">
 
 <div class="container">
 
-<h2 class="section-title mb-4">Projects</h2>
-
-<div id="githubProjects" class="row g-4"></div>
-
-</div>
-
-</section>
-
-<!-- ARCHITECTURE -->
-
-<section id="architecture" class="py-5 divider fade-in">
-
-<div class="container text-center">
-
-<h2 class="section-title mb-5">AI System Architecture</h2>
-
-<div class="pipeline">
-
-<div>Documents</div>
-<div>OCR</div>
-<div>LLM Processing</div>
-<div>Vector Database</div>
-<div>AI Agents</div>
-<div>Applications</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CASE STUDIES -->
-
-<section id="case" class="py-5 divider fade-in">
-
-<div class="container">
-
-<h2 class="section-title mb-4">Case Studies</h2>
+<h2 class="section-title mb-5">Selected Projects</h2>
 
 <div class="row g-4">
 
 <div class="col-md-6">
-
 <div class="glass-card">
-
-<h3>LLM Document Intelligence</h3>
-
+<h3>AI Task Agent</h3>
 <p class="text-muted-custom">
-OCR + embeddings + vector search system reducing processing time by 95 percent.
+Full stack agentic application using FastAPI backend and Streamlit frontend demonstrating tool selection, multi step reasoning, SSE streaming and persistent task history.
 </p>
-
+<a href="https://github.com/Yuvansh1/ai-task-agent">GitHub</a>
 </div>
-
 </div>
 
 <div class="col-md-6">
-
 <div class="glass-card">
-
-<h3>Multi Agent Financial Intelligence</h3>
-
+<h3>Insurance Knowledge Retrieval System</h3>
 <p class="text-muted-custom">
-Agent system generating structured risk insights from financial news.
+End to end RAG platform using Gemini embeddings, Pinecone vector search and FastAPI enabling semantic policy retrieval and grounded LLM responses.
 </p>
-
+</div>
 </div>
 
+<div class="col-md-6">
+<div class="glass-card">
+<h3>Banking Risk Intelligence Agent</h3>
+<p class="text-muted-custom">
+Multi agent system converting financial news into structured risk insights using planner, research, answer and critic agents.
+</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="glass-card">
+<h3>Customer Churn Prediction</h3>
+<p class="text-muted-custom">
+XGBoost and AutoML models predicting churn enabling targeted retention strategies reducing churn by 17%.
+</p>
+</div>
 </div>
 
 </div>
@@ -477,17 +375,17 @@ Let's work together
 </h2>
 
 <p style="max-width:400px;margin:auto;margin-top:10px">
-Have an AI challenge? Let's discuss.
+Interested in AI engineering, agent systems or production ML collaborations.
 </p>
 
-<div class="mt-4 d-flex justify-content-center gap-2 flex-wrap">
+<div class="mt-4 d-flex justify-content-center gap-3">
 
-<a href="mailto:yuvansh2@gmail.com" style="background:white;color:black;padding:10px 24px;border-radius:50px;font-weight:600">
+<a href="mailto:yuvansh2@gmail.com" style="background:white;color:black;padding:10px 24px;border-radius:40px">
 Email
 </a>
 
-<a href="https://github.com/Yuvansh1" style="border:1px solid white;padding:10px 24px;border-radius:50px;color:white">
-GitHub
+<a href="https://linkedin.com/in/yuvansh1302" style="border:1px solid white;padding:10px 24px;border-radius:40px;color:white">
+LinkedIn
 </a>
 
 </div>
@@ -498,61 +396,17 @@ GitHub
 
 <footer class="py-4 divider text-center">
 
-<p style="font-size:11px;color:var(--muted)">
+<p style="font-size:12px;color:var(--muted)">
 © 2026 Yuvansh Bhardwaj
 </p>
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
 
-/* dark mode */
-
 document.getElementById("darkToggle").onclick=()=>{
-document.body.classList.toggle("dark-mode");
+document.body.classList.toggle("dark-mode")
 }
-
-/* animations */
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show")
-}
-})
-})
-
-document.querySelectorAll(".fade-in").forEach(el=>{
-observer.observe(el)
-})
-
-/* github repos */
-
-fetch("https://api.github.com/users/Yuvansh1/repos")
-.then(res=>res.json())
-.then(data=>{
-
-const container=document.getElementById("githubProjects")
-
-data.slice(0,4).forEach(repo=>{
-
-container.innerHTML+=`
-<div class="col-md-6">
-<div class="glass-card skill-card p-4">
-<h3 style="font-size:16px;font-weight:700">${repo.name}</h3>
-<p class="text-muted-custom">${repo.description || "AI Project"}</p>
-<a href="${repo.html_url}" target="_blank" class="btn-outline-custom mt-3">
-View Repo
-</a>
-</div>
-</div>
-`
-
-})
-
-})
 
 </script>
 
