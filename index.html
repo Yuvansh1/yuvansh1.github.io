@@ -5,6 +5,10 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Yuvansh Bhardwaj - AI Engineer with 7+ years building production LLM pipelines, multi-agent workflows, and RAG systems. Based in Toronto, ON.">
+<meta property="og:title" content="Yuvansh Bhardwaj | AI Engineer">
+<meta property="og:description" content="AI Engineer specializing in agentic AI, RAG systems, and production LLM pipelines. 7+ years across healthcare, finance, and retail.">
+<meta property="og:type" content="website">
 
 <title>Yuvansh Bhardwaj | AI Engineer</title>
 
@@ -21,15 +25,6 @@
 --border:#e5e5e5;
 --glass-bg:rgba(255,255,255,.7);
 --glass-border:rgba(255,255,255,.3);
-}
-
-.dark-mode{
---bg:#0f0f10;
---fg:#fff;
---muted:#aaa;
---border:#2a2a2a;
---glass-bg:rgba(20,20,20,.7);
---glass-border:rgba(255,255,255,.05);
 }
 
 body{
@@ -80,6 +75,8 @@ border:none;
 padding:10px 24px;
 border-radius:40px;
 font-weight:600;
+text-decoration:none;
+display:inline-block;
 }
 
 .btn-outline-custom{
@@ -88,6 +85,9 @@ padding:10px 24px;
 border-radius:40px;
 font-weight:600;
 background:transparent;
+text-decoration:none;
+display:inline-block;
+color:var(--fg);
 }
 
 .specialty-tag{
@@ -142,6 +142,19 @@ padding:14px;
 .cta-section{
 background:var(--fg);
 color:white;
+}
+
+.flagship-badge{
+display:inline-block;
+background:#111;
+color:white;
+font-size:10px;
+font-weight:700;
+letter-spacing:.05em;
+padding:3px 10px;
+border-radius:20px;
+margin-bottom:10px;
+text-transform:uppercase;
 }
 
 </style>
@@ -226,7 +239,7 @@ LinkedIn
 
 <div class="portrait-img-wrapper">
 
-<img src="portrait.png">
+<img src="portrait.png" alt="Yuvansh Bhardwaj">
 
 <div class="portrait-overlay">
 
@@ -341,7 +354,7 @@ AI Engineer | Data Scientist | GenAI Specialist
 
 </section>
 
-<!-- Certifications -->  
+<!-- Certifications -->
 <section id="certifications" class="py-5 divider">
 
 <div class="container">
@@ -354,25 +367,25 @@ AI Engineer | Data Scientist | GenAI Specialist
 <div class="glass-card skill-card">
 <h4>Google AI Professional</h4>
 <p class="text-muted-custom">
-Industry certification validating expertise in artificial intelligence systems and production AI solutions.
+Issued by Google. Validates expertise in artificial intelligence systems and production AI solution design.
 </p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="glass-card skill-card">
-<h4>AWS Machine Learning</h4>
+<h4>AWS Machine Learning Specialty</h4>
 <p class="text-muted-custom">
-Certification focused on building deploying and scaling machine learning systems on AWS cloud infrastructure.
+Issued by Amazon Web Services. Covers building, deploying, and scaling machine learning systems on AWS infrastructure.
 </p>
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="glass-card skill-card">
-<h4>CrewAI Agents</h4>
+<h4>CrewAI Multi-Agent Systems</h4>
 <p class="text-muted-custom">
-Certification focused on designing and orchestrating multi agent AI systems using CrewAI frameworks.
+Issued by CrewAI. Covers designing and orchestrating production multi-agent AI workflows using the CrewAI framework.
 </p>
 </div>
 </div>
@@ -381,7 +394,7 @@ Certification focused on designing and orchestrating multi agent AI systems usin
 <div class="glass-card skill-card">
 <h4>Tableau Desktop Specialist</h4>
 <p class="text-muted-custom">
-Certification demonstrating expertise in data visualization and analytics dashboard development.
+Issued by Tableau (Salesforce). Demonstrates proficiency in data visualization and analytics dashboard development.
 </p>
 </div>
 </div>
@@ -390,7 +403,7 @@ Certification demonstrating expertise in data visualization and analytics dashbo
 <div class="glass-card skill-card">
 <h4>Alteryx Designer Core</h4>
 <p class="text-muted-custom">
-Certification validating data preparation automation and analytics workflows using Alteryx.
+Issued by Alteryx. Validates data preparation, automation, and analytics workflow development using Alteryx Designer.
 </p>
 </div>
 </div>
@@ -400,7 +413,7 @@ Certification validating data preparation automation and analytics workflows usi
 </div>
 
 </section>
-  
+
 <!-- PROJECTS -->
 
 <section id="projects" class="py-5 divider">
@@ -410,6 +423,24 @@ Certification validating data preparation automation and analytics workflows usi
 <h2 class="section-title mb-5">Selected Projects</h2>
 
 <div class="row g-4">
+
+<!-- Roche Multi-Agent Lab Pipeline (Flagship) -->
+
+<div class="col-md-12">
+<div class="glass-card">
+
+<span class="flagship-badge">Flagship Project</span>
+
+<h3>
+Roche Multi-Agent Lab Report Pipeline
+</h3>
+
+<p class="text-muted-custom">
+Architected and deployed a production multi-agent system at Roche to automate lab report processing end-to-end. A planner agent decomposes incoming reports and routes tasks across specialist agents for extraction, validation, and structured output generation. Reduced average processing time from 40 minutes to 100 seconds, a 96% reduction, while maintaining clinical-grade accuracy. Built on LangGraph with Azure AI Foundry, FastAPI, and Docker on Azure.
+</p>
+
+</div>
+</div>
 
 <!-- AI Task Agent -->
 
@@ -424,12 +455,11 @@ Project Link
 </h3>
 
 <p class="text-muted-custom">
-The AI Task Agent is a full-stack agentic application consisting of a FastAPI backend and a Streamlit frontend, containerised with Docker Compose. It demonstrates tool selection, multi-step chaining, real-time SSE streaming, role-based access control, and persistent task history within a decoupled architecture.
+A full-stack agentic application with a FastAPI backend and Streamlit frontend, containerised with Docker Compose. Demonstrates tool selection, multi-step chaining, real-time SSE streaming, role-based access control, and persistent task history within a decoupled architecture.
 </p>
 
 </div>
 </div>
-
 
 <!-- Insurance RAG -->
 
@@ -444,12 +474,11 @@ Project Link
 </h3>
 
 <p class="text-muted-custom">
-Designed an end-to-end RAG system using Gemini embeddings, Pinecone vector search, and FastAPI. Enables semantic policy retrieval and context-grounded LLM responses with namespace-based index isolation and Docker containerisation.
+End-to-end RAG system using Gemini embeddings, Pinecone vector search, and FastAPI. Enables semantic policy retrieval and context-grounded LLM responses with namespace-based index isolation and Docker containerisation.
 </p>
 
 </div>
 </div>
-
 
 <!-- Banking Risk Agent -->
 
@@ -464,12 +493,11 @@ Project Link
 </h3>
 
 <p class="text-muted-custom">
-Built a multi-agent financial intelligence system converting unstructured financial news into structured, evidence-backed risk insights. Designed planner, research, answer, and critic agents to classify risk, retrieve evidence, generate audit-ready summaries with citations, and self-validate outputs to reduce hallucinations.
+Multi-agent financial intelligence system converting unstructured financial news into structured, evidence-backed risk insights. Planner, research, answer, and critic agents collaborate to classify risk, retrieve evidence, generate audit-ready summaries with citations, and self-validate outputs to reduce hallucinations.
 </p>
 
 </div>
 </div>
-
 
 <!-- Churn Prediction -->
 
@@ -484,12 +512,11 @@ Project Link
 </h3>
 
 <p class="text-muted-custom">
-Developed XGBoost and AutoML models predicting customer churn with high accuracy, enabling targeted retention strategies that reduced churn by 17% and improved customer lifetime value.
+XGBoost and AutoML models predicting customer churn with high accuracy, enabling targeted retention strategies that reduced churn by 17% and improved customer lifetime value.
 </p>
 
 </div>
 </div>
-
 
 </div>
 
@@ -513,11 +540,11 @@ Interested in AI engineering, agent systems or production ML collaborations.
 
 <div class="mt-4 d-flex justify-content-center gap-3">
 
-<a href="mailto:yuvansh2@gmail.com" style="background:white;color:black;padding:10px 24px;border-radius:40px">
+<a href="mailto:yuvansh2@gmail.com" style="background:white;color:black;padding:10px 24px;border-radius:40px;text-decoration:none;">
 Email
 </a>
 
-<a href="https://linkedin.com/in/yuvansh1302" style="border:1px solid white;padding:10px 24px;border-radius:40px;color:white">
+<a href="https://linkedin.com/in/yuvansh1302" style="border:1px solid white;padding:10px 24px;border-radius:40px;color:white;text-decoration:none;">
 LinkedIn
 </a>
 
@@ -529,18 +556,14 @@ LinkedIn
 
 <footer class="py-4 divider text-center">
 
-<p style="font-size:12px;color:var(--muted)">
-© 2026 Yuvansh Bhardwaj
-</p>
+<p style="font-size:12px;color:var(--muted)" id="footer-year"></p>
 
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
-
-document.getElementById("darkToggle").onclick=()=>{
-document.body.classList.toggle("dark-mode")
-}
-
+document.getElementById("footer-year").textContent = "© " + new Date().getFullYear() + " Yuvansh Bhardwaj";
 </script>
 
 </body>
