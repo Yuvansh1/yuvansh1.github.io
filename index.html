@@ -434,8 +434,202 @@ Validates data preparation, automation, and analytics workflow development using
 <p class="text-muted-custom">
 Architected and deployed a production multi-agent system at Roche to automate lab report processing end-to-end. A planner agent decomposes incoming reports and routes tasks across specialist agents for extraction, validation, and structured output generation. Reduced average processing time from 40 minutes to 100 seconds, a 96% reduction, while maintaining clinical-grade accuracy. Built on LangGraph with Azure AI Foundry, FastAPI, and Docker on Azure.
 </p>
+
+  <!-- ── WORKFLOW DIAGRAM ── -->
+  <div style="border-top:1px solid var(--border);padding-top:28px;margin-top:4px;">
+
+    <div class="workflow-eyebrow">System Workflow Architecture</div>
+
+    <!-- Stats -->
+    <div class="stat-row">
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:#ef4444"></span>
+        <span class="stat-pill-val">40 min</span>
+        <span class="stat-pill-label">Before</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:#1a8a4a"></span>
+        <span class="stat-pill-val">100 sec</span>
+        <span class="stat-pill-label">After</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:#0071e3"></span>
+        <span class="stat-pill-val">96%</span>
+        <span class="stat-pill-label">Time Reduction</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-pill-dot" style="background:#5b3fa6"></span>
+        <span class="stat-pill-val">✓ Clinical-Grade</span>
+        <span class="stat-pill-label">Accuracy Maintained</span>
+      </div>
+    </div>
+
+    <div class="wf-flow">
+
+      <!-- Input -->
+      <div class="wf-input-card">
+        <div class="wf-icon-box">📄</div>
+        <div>
+          <div class="wf-node-label">Incoming Lab Reports</div>
+          <div class="wf-node-sub">PDF · HL7 · FHIR · Unstructured Text</div>
+        </div>
+      </div>
+
+      <!-- Arrow -->
+      <div class="wf-connector">
+        <div class="wf-line"></div>
+        <div class="wf-arrow"></div>
+      </div>
+
+      <!-- Planner -->
+      <div class="wf-planner">
+        <div class="wf-planner-top">
+          <div class="wf-planner-icon">🧠</div>
+          <div>
+            <div class="wf-planner-title">Planner Agent</div>
+            <div class="wf-planner-role">Orchestrator · LangGraph StateGraph</div>
+          </div>
+        </div>
+        <div class="wf-planner-desc">
+          Receives and parses each report, decomposes it into a task graph, assigns priorities, and dynamically routes sub-tasks to the appropriate specialist agents. Handles retries and error recovery throughout the pipeline.
+        </div>
+        <div class="wf-planner-tags">
+          <span class="wf-ptag">Task Decomposition</span>
+          <span class="wf-ptag">DAG Routing</span>
+          <span class="wf-ptag">Agent Orchestration</span>
+          <span class="wf-ptag">Error Recovery</span>
+          <span class="wf-ptag">State Management</span>
+        </div>
+      </div>
+
+      <!-- Fan out -->
+      <div class="wf-fan">
+        <svg viewBox="0 0 700 40" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="350" y1="0" x2="350" y2="18" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="117" y1="18" x2="583" y2="18" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="117" y1="18" x2="117" y2="40" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="350" y1="18" x2="350" y2="40" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="583" y1="18" x2="583" y2="40" stroke="#ccc" stroke-width="1.2"/>
+        </svg>
+      </div>
+
+      <!-- Specialist agents -->
+      <div class="wf-agents">
+
+        <!-- Extraction -->
+        <div class="wf-agent" style="--ac:#0071e3;--ac-bg:#e8f1fb;--ac-text:#0071e3;">
+          <div class="wf-agent-icon">🔍</div>
+          <div class="wf-agent-name">Extraction Agent</div>
+          <div class="wf-agent-role">Data Extraction</div>
+          <ul class="wf-tasks">
+            <li>Parse raw report text and fields</li>
+            <li>Extract patient IDs, panels, result values</li>
+            <li>Handle PDF, HL7, FHIR formats</li>
+            <li>Normalize units and reference ranges</li>
+            <li>Flag ambiguous or incomplete fields</li>
+          </ul>
+        </div>
+
+        <!-- Validation -->
+        <div class="wf-agent" style="--ac:#92580a;--ac-bg:#fdf3e0;--ac-text:#92580a;">
+          <div class="wf-agent-icon">🛡️</div>
+          <div class="wf-agent-name">Validation Agent</div>
+          <div class="wf-agent-role">Clinical Validation</div>
+          <ul class="wf-tasks">
+            <li>Apply clinical reference range checks</li>
+            <li>Detect anomalies and critical alerts</li>
+            <li>Ensure IVD / IVDR compliance</li>
+            <li>Assign confidence scores per value</li>
+            <li>Hallucination and faithfulness checks</li>
+          </ul>
+          <div class="deepeval-badge">
+            <span>⚡</span> DeepEval · G-Eval Metrics
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="wf-agent" style="--ac:#1a8a4a;--ac-bg:#e6f4ec;--ac-text:#1a8a4a;">
+          <div class="wf-agent-icon">📊</div>
+          <div class="wf-agent-name">Output Agent</div>
+          <div class="wf-agent-role">Structured Generation</div>
+          <ul class="wf-tasks">
+            <li>Generate FHIR-compliant JSON bundles</li>
+            <li>Produce clinical readable summaries</li>
+            <li>Format for EHR ingestion</li>
+            <li>Attach audit trail and provenance</li>
+            <li>Emit structured logs for observability</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Merge -->
+      <div class="wf-merge">
+        <svg viewBox="0 0 700 40" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="117" y1="0" x2="117" y2="22" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="350" y1="0" x2="350" y2="22" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="583" y1="0" x2="583" y2="22" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="117" y1="22" x2="583" y2="22" stroke="#ccc" stroke-width="1.2"/>
+          <line x1="350" y1="22" x2="350" y2="40" stroke="#ccc" stroke-width="1.2"/>
+          <polygon points="344,36 350,40 356,36" fill="#aaa"/>
+        </svg>
+      </div>
+
+      <!-- Outputs -->
+      <div class="wf-outputs">
+        <div class="wf-out">
+          <div class="wf-out-icon">✅</div>
+          <div>
+            <div class="wf-out-title">Structured Report</div>
+            <div class="wf-out-desc">FHIR-compliant JSON bundles for EHR ingestion.</div>
+          </div>
+        </div>
+        <div class="wf-out">
+          <div class="wf-out-icon">📋</div>
+          <div>
+            <div class="wf-out-title">Clinical Summary</div>
+            <div class="wf-out-desc">Human-readable summary with highlighted critical values.</div>
+          </div>
+        </div>
+        <div class="wf-out">
+          <div class="wf-out-icon">🔔</div>
+          <div>
+            <div class="wf-out-title">Critical Alerts</div>
+            <div class="wf-out-desc">Real-time out-of-range alerts routed to care teams.</div>
+          </div>
+        </div>
+        <div class="wf-out">
+          <div class="wf-out-icon">🗂️</div>
+          <div>
+            <div class="wf-out-title">Audit Trail</div>
+            <div class="wf-out-desc">Full provenance logs for compliance and QA review.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end wf-flow -->
+
+    <!-- Tech stack -->
+    <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
+      <div class="wf-tech-label">Technology Stack</div>
+      <div class="wf-chips">
+        <span class="wf-chip">LangGraph</span>
+        <span class="wf-chip">Azure AI Foundry</span>
+        <span class="wf-chip">FastAPI</span>
+        <span class="wf-chip">Docker</span>
+        <span class="wf-chip">DeepEval</span>
+        <span class="wf-chip">FHIR R4</span>
+        <span class="wf-chip">HL7 v2/v3</span>
+        <span class="wf-chip">Azure Container Apps</span>
+        <span class="wf-chip">Azure Monitor</span>
+        <span class="wf-chip">Python</span>
+      </div>
+    </div>
+
+  </div><!-- end workflow diagram wrapper -->
 </div>
 </div>
+<!-- end flagship -->
 
 <!-- Real Estate and Insurance Knowledge Retrieval System (3rd) -->
 <div class="col-md-6">
