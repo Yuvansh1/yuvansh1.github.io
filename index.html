@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Yuvansh Bhardwaj - AI Engineer with 7+ years building production LLM pipelines, multi-agent workflows, and RAG systems. Based in Toronto, ON.">
@@ -16,174 +15,106 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
---bg:#f5f5f7;
---fg:#111;
---muted:#666;
---border:#e5e5e5;
---glass-bg:rgba(255,255,255,.7);
---glass-border:rgba(255,255,255,.3);
+  --bg:#f5f5f7;
+  --fg:#111;
+  --muted:#666;
+  --border:#e5e5e5;
+  --glass-bg:rgba(255,255,255,.7);
+  --glass-border:rgba(255,255,255,.3);
 }
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--fg);line-height:1.7;}
+h1,h2,h3{font-family:'Inter Tight',sans-serif;}
+nav.navbar{backdrop-filter:blur(14px);background:rgba(245,245,247,.85);}
+.section-title{font-weight:900;}
+.text-muted-custom{color:var(--muted);}
+.divider{border-top:1px solid var(--border);}
+.glass-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:20px;backdrop-filter:blur(10px);}
+.skill-card{transition:transform .2s,box-shadow .2s;}
+.skill-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,.08);}
+.btn-primary-custom{background:var(--fg);color:white;border:none;padding:10px 24px;border-radius:40px;font-weight:600;text-decoration:none;display:inline-block;}
+.btn-outline-custom{border:1px solid var(--border);padding:10px 24px;border-radius:40px;font-weight:600;background:transparent;text-decoration:none;display:inline-block;color:var(--fg);}
+.specialty-tag{padding:6px 12px;font-size:11px;background:var(--glass-bg);border-radius:20px;}
+.portrait-wrapper{position:relative;max-width:360px;margin:auto;}
+.portrait-glow{position:absolute;inset:-20px;border-radius:20px;background:linear-gradient(135deg,#6d8cff,#a68bff);filter:blur(40px);opacity:.25;}
+.portrait-img-wrapper{position:relative;border-radius:16px;overflow:hidden;}
+.portrait-img-wrapper img{width:100%;height:100%;object-fit:cover;}
+.portrait-overlay{position:absolute;bottom:0;left:0;right:0;padding:18px;}
+.overlay-card{background:rgba(0,0,0,.7);color:white;border-radius:10px;padding:14px;}
+.cta-section{background:var(--fg);color:white;}
+.flagship-badge{display:inline-block;background:#111;color:white;font-size:10px;font-weight:700;letter-spacing:.05em;padding:3px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;}
+.cert-badge{display:inline-block;background:#f0f0f2;color:#333;font-size:10px;font-weight:700;letter-spacing:.05em;padding:3px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase;}
+.publication-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:12px;padding:24px;backdrop-filter:blur(10px);border-left:4px solid #111;}
 
-body{
-font-family:'Inter',sans-serif;
-background:var(--bg);
-color:var(--fg);
-line-height:1.7;
-}
+/* ── Shared workflow styles ── */
+.wf-flow{display:flex;flex-direction:column;align-items:center;gap:0;}
+.stat-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;}
+.stat-pill{display:flex;align-items:center;gap:8px;background:#f5f5f7;border-radius:20px;padding:6px 14px;font-size:13px;}
+.stat-pill-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.stat-pill-val{font-weight:700;color:#111;}
+.stat-pill-label{color:#666;}
+.workflow-eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#999;margin-bottom:16px;}
+.wf-connector{display:flex;flex-direction:column;align-items:center;margin:2px 0;}
+.wf-line{width:1.5px;height:28px;background:#ccc;}
+.wf-arrow{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid #aaa;}
+.wf-fan{width:100%;max-width:700px;margin:0 auto;}
+.wf-fan svg,.wf-merge svg{width:100%;height:40px;}
+.wf-merge{width:100%;max-width:700px;margin:0 auto;}
+.wf-tech-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#999;margin-bottom:10px;}
+.wf-chips{display:flex;flex-wrap:wrap;gap:8px;}
+.wf-chip{background:#f0f0f2;color:#444;font-size:12px;font-weight:500;padding:4px 10px;border-radius:6px;}
 
-h1,h2,h3{
-font-family:'Inter Tight',sans-serif;
-}
+/* Input card */
+.wf-input-card{display:flex;align-items:center;gap:14px;background:#f8f8fa;border:1px solid #e5e5e5;border-radius:10px;padding:14px 20px;width:100%;max-width:500px;}
+.wf-icon-box{font-size:24px;flex-shrink:0;}
+.wf-node-label{font-weight:700;font-size:15px;color:#111;}
+.wf-node-sub{font-size:12px;color:#888;margin-top:2px;}
 
-nav.navbar{
-backdrop-filter:blur(14px);
-background:rgba(245,245,247,.85);
-}
+/* Planner */
+.wf-planner{width:100%;max-width:600px;border:1.5px solid #111;border-radius:12px;padding:18px 22px;background:white;}
+.wf-planner-top{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.wf-planner-icon{font-size:26px;}
+.wf-planner-title{font-weight:800;font-size:16px;}
+.wf-planner-role{font-size:12px;color:#888;}
+.wf-planner-desc{font-size:13px;color:#555;line-height:1.6;margin-bottom:12px;}
+.wf-planner-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.wf-ptag{background:#f0f0f2;color:#444;font-size:11px;padding:3px 9px;border-radius:5px;}
 
-.section-title{
-font-weight:900;
-}
+/* Agents grid */
+.wf-agents{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;max-width:700px;}
+@media(max-width:640px){.wf-agents{grid-template-columns:1fr;}}
+.wf-agent{border:1px solid var(--ac,#ccc);border-radius:10px;padding:14px;background:var(--ac-bg,#f8f8f8);}
+.wf-agent-icon{font-size:22px;margin-bottom:6px;}
+.wf-agent-name{font-weight:700;font-size:14px;color:var(--ac-text,#333);margin-bottom:2px;}
+.wf-agent-role{font-size:11px;color:#888;margin-bottom:10px;}
+.wf-tasks{padding-left:16px;font-size:12px;color:#555;line-height:1.7;margin:0;}
+.deepeval-badge{margin-top:10px;background:#fffbe6;border:1px solid #f0c040;border-radius:6px;padding:4px 8px;font-size:11px;color:#7a6000;display:inline-block;}
 
-.text-muted-custom{
-color:var(--muted);
-}
+/* Outputs */
+.wf-outputs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%;max-width:700px;margin-top:4px;}
+@media(max-width:500px){.wf-outputs{grid-template-columns:1fr;}}
+.wf-out{display:flex;align-items:flex-start;gap:12px;background:#f8f8fa;border:1px solid #e5e5e5;border-radius:8px;padding:12px;}
+.wf-out-icon{font-size:20px;flex-shrink:0;}
+.wf-out-title{font-weight:700;font-size:13px;}
+.wf-out-desc{font-size:12px;color:#777;margin-top:2px;}
 
-.divider{
-border-top:1px solid var(--border);
-}
-
-.glass-card{
-background:var(--glass-bg);
-border:1px solid var(--glass-border);
-border-radius:12px;
-padding:20px;
-backdrop-filter:blur(10px);
-}
-
-.skill-card{
-transition:transform .2s,box-shadow .2s;
-}
-
-.skill-card:hover{
-transform:translateY(-4px);
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.btn-primary-custom{
-background:var(--fg);
-color:white;
-border:none;
-padding:10px 24px;
-border-radius:40px;
-font-weight:600;
-text-decoration:none;
-display:inline-block;
-}
-
-.btn-outline-custom{
-border:1px solid var(--border);
-padding:10px 24px;
-border-radius:40px;
-font-weight:600;
-background:transparent;
-text-decoration:none;
-display:inline-block;
-color:var(--fg);
-}
-
-.specialty-tag{
-padding:6px 12px;
-font-size:11px;
-background:var(--glass-bg);
-border-radius:20px;
-}
-
-.portrait-wrapper{
-position:relative;
-max-width:360px;
-margin:auto;
-}
-
-.portrait-glow{
-position:absolute;
-inset:-20px;
-border-radius:20px;
-background:linear-gradient(135deg,#6d8cff,#a68bff);
-filter:blur(40px);
-opacity:.25;
-}
-
-.portrait-img-wrapper{
-position:relative;
-border-radius:16px;
-overflow:hidden;
-}
-
-.portrait-img-wrapper img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.portrait-overlay{
-position:absolute;
-bottom:0;
-left:0;
-right:0;
-padding:18px;
-}
-
-.overlay-card{
-background:rgba(0,0,0,.7);
-color:white;
-border-radius:10px;
-padding:14px;
-}
-
-.cta-section{
-background:var(--fg);
-color:white;
-}
-
-.flagship-badge{
-display:inline-block;
-background:#111;
-color:white;
-font-size:10px;
-font-weight:700;
-letter-spacing:.05em;
-padding:3px 10px;
-border-radius:20px;
-margin-bottom:10px;
-text-transform:uppercase;
-}
-
-.cert-badge{
-display:inline-block;
-background:#f0f0f2;
-color:#333;
-font-size:10px;
-font-weight:700;
-letter-spacing:.05em;
-padding:3px 10px;
-border-radius:20px;
-margin-bottom:10px;
-text-transform:uppercase;
-}
-
-.publication-card{
-background:var(--glass-bg);
-border:1px solid var(--glass-border);
-border-radius:12px;
-padding:24px;
-backdrop-filter:blur(10px);
-border-left:4px solid #111;
-}
-
+/* ── Agent flow diagrams (Property RAG + Banking Risk) ── */
+.agent-flow{display:flex;flex-direction:column;gap:0;align-items:center;margin-top:20px;}
+.agent-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.agent-box{border-radius:10px;padding:14px 16px;min-width:150px;text-align:center;border:1.5px solid;}
+.agent-box .ab-icon{font-size:22px;margin-bottom:4px;}
+.agent-box .ab-name{font-weight:700;font-size:13px;}
+.agent-box .ab-role{font-size:11px;margin-top:2px;opacity:.8;}
+.agent-box .ab-tasks{text-align:left;font-size:11px;margin-top:8px;padding-left:14px;line-height:1.7;}
+.flow-arrow-down{display:flex;flex-direction:column;align-items:center;margin:6px 0;}
+.flow-arrow-down .fa-line{width:1.5px;height:22px;background:#ccc;}
+.flow-arrow-down .fa-tip{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid #aaa;}
+.flow-label{font-size:10px;color:#999;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin:2px 0;}
+.agent-connector-h{display:flex;align-items:center;gap:6px;margin:8px 0;}
+.agent-connector-h .hline{flex:1;height:1.5px;background:#ccc;}
+.agent-connector-h .htip{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:7px solid #aaa;}
+.loop-note{background:#fff8e1;border:1px solid #f0c040;border-radius:6px;padding:6px 12px;font-size:11px;color:#7a6000;margin-top:8px;display:inline-block;}
 </style>
-
 </head>
 
 <body>
@@ -212,12 +143,8 @@ border-left:4px solid #111;
 <div class="container">
 <div class="row align-items-center">
 <div class="col-md-7">
-<h1 style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900">
-Yuvansh Bhardwaj
-</h1>
-<p class="text-muted-custom mt-3">
-AI Engineer with 7+ years transforming unstructured data into intelligent systems. Specialized in designing and deploying production-grade LLM pipelines, multi-agent workflows, and RAG systems that drive measurable business impact. Proven track record delivering AI solutions across healthcare, finance, retail, and insurance.
-</p>
+<h1 style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900">Yuvansh Bhardwaj</h1>
+<p class="text-muted-custom mt-3">AI Engineer with 7+ years transforming unstructured data into intelligent systems. Specialized in designing and deploying production-grade LLM pipelines, multi-agent workflows, and RAG systems that drive measurable business impact. Proven track record delivering AI solutions across healthcare, finance, retail, and insurance.</p>
 <div class="mt-3 d-flex flex-wrap gap-2">
 <span class="specialty-tag">Agentic AI</span>
 <span class="specialty-tag">RAG Systems</span>
@@ -253,94 +180,54 @@ AI Engineer with 7+ years transforming unstructured data into intelligent system
 <div class="container">
 <h2 class="section-title mb-5">Skills & Expertise</h2>
 <div class="row g-4">
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <h4>AI & LLM Systems</h4>
 <ul class="text-muted-custom">
-<li>LLMs (GPT, Gemini)</li>
-<li>Agentic AI and Multi-Agent Systems</li>
-<li>LangGraph, CrewAI, LangChain</li>
-<li>RAG Pipelines</li>
-<li>Prompt Engineering</li>
-<li>Fine-Tuning</li>
-<li>LLM Evaluation and Responsible AI</li>
-<li>Human Feedback Loops</li>
+<li>LLMs (GPT, Gemini)</li><li>Agentic AI and Multi-Agent Systems</li><li>LangGraph, CrewAI, LangChain</li><li>RAG Pipelines</li><li>Prompt Engineering</li><li>Fine-Tuning</li><li>LLM Evaluation and Responsible AI</li><li>Human Feedback Loops</li>
 </ul>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <h4>Machine Learning & Programming</h4>
 <ul class="text-muted-custom">
-<li>Python (PyTorch, TensorFlow, scikit-learn)</li>
-<li>XGBoost, AutoML</li>
-<li>Hugging Face</li>
-<li>NLP and Statistical Modelling</li>
-<li>MLFlow</li>
-<li>Claude Code</li>
-<li>SQL, R</li>
-<li>Flask, FastAPI, Scrapy</li>
+<li>Python (PyTorch, TensorFlow, scikit-learn)</li><li>XGBoost, AutoML</li><li>Hugging Face</li><li>NLP and Statistical Modelling</li><li>MLFlow</li><li>Claude Code</li><li>SQL, R</li><li>Flask, FastAPI, Scrapy</li>
 </ul>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <h4>Cloud & Infrastructure</h4>
 <ul class="text-muted-custom">
-<li>AWS (ECS Fargate, Lambda, S3, EC2)</li>
-<li>Azure (AI Foundry, OpenAI Service, Azure ML, AI Search)</li>
-<li>GCP (BigQuery, Vertex AI)</li>
-<li>Docker</li>
-<li>CI/CD Pipelines</li>
-<li>API Gateways</li>
+<li>AWS (ECS Fargate, Lambda, S3, EC2)</li><li>Azure (AI Foundry, OpenAI Service, Azure ML, AI Search)</li><li>GCP (BigQuery, Vertex AI)</li><li>Docker</li><li>CI/CD Pipelines</li><li>API Gateways</li>
 </ul>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <h4>Data Platforms & Databases</h4>
 <ul class="text-muted-custom">
-<li>Snowflake</li>
-<li>Vector Databases (Pinecone, OpenSearch)</li>
-<li>BigQuery</li>
-<li>MySQL</li>
-<li>PySpark</li>
-<li>DBT, Alteryx</li>
+<li>Snowflake</li><li>Vector Databases (Pinecone, OpenSearch)</li><li>BigQuery</li><li>MySQL</li><li>PySpark</li><li>DBT, Alteryx</li>
 </ul>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <h4>Analytics & Visualisation</h4>
 <ul class="text-muted-custom">
-<li>Tableau</li>
-<li>Power BI</li>
-<li>Looker Studio</li>
-<li>Google Analytics</li>
+<li>Tableau</li><li>Power BI</li><li>Looker Studio</li><li>Google Analytics</li>
 </ul>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <h4>Professional Skills</h4>
 <ul class="text-muted-custom">
-<li>AI Solution Architecture</li>
-<li>Production ML Systems</li>
-<li>Technical Leadership</li>
-<li>Cross-functional Collaboration</li>
-<li>Agile and Scrum</li>
-<li>Git, JIRA, Confluence</li>
-<li>Stakeholder Communication</li>
+<li>AI Solution Architecture</li><li>Production ML Systems</li><li>Technical Leadership</li><li>Cross-functional Collaboration</li><li>Agile and Scrum</li><li>Git, JIRA, Confluence</li><li>Stakeholder Communication</li>
 </ul>
 </div>
 </div>
-
 </div>
 </div>
 </section>
@@ -350,72 +237,53 @@ AI Engineer with 7+ years transforming unstructured data into intelligent system
 <div class="container">
 <h2 class="section-title mb-5">Certifications</h2>
 <div class="row g-4">
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <span class="cert-badge">Google</span>
 <h4>Google AI Professional</h4>
-<p class="text-muted-custom">
-Validates expertise in artificial intelligence systems and production AI solution design.
-</p>
+<p class="text-muted-custom">Validates expertise in artificial intelligence systems and production AI solution design.</p>
 <a href="https://www.coursera.org/account/accomplishments/specialization/XV2YWHLL5A6T" target="_blank" style="font-size:13px;font-weight:600;">View Certificate →</a>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <span class="cert-badge">Deeplearning.AI</span>
 <h4>MLOps Specialization</h4>
-<p class="text-muted-custom">
-Issued by Deeplearning.AI. Covers ML experiment tracking, model deployment, monitoring, and production observability with MLFlow.
-</p>
+<p class="text-muted-custom">Issued by Deeplearning.AI. Covers ML experiment tracking, model deployment, monitoring, and production observability with MLFlow.</p>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <span class="cert-badge">Amazon Web Services</span>
 <h4>AWS Machine Learning Specialty</h4>
-<p class="text-muted-custom">
-Covers building, deploying, and scaling machine learning systems on AWS infrastructure.
-</p>
+<p class="text-muted-custom">Covers building, deploying, and scaling machine learning systems on AWS infrastructure.</p>
 <a href="https://www.credly.com/badges/2bb3f01b-4ca8-485e-b5ef-c5b8fa25f6f7/public_url" target="_blank" style="font-size:13px;font-weight:600;">View Certificate →</a>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <span class="cert-badge">Coursera</span>
 <h4>MLFlow and Hugging Face</h4>
-<p class="text-muted-custom">
-Covers experiment tracking, model registry, and deployment with MLFlow alongside building and fine-tuning models using the Hugging Face ecosystem.
-</p>
+<p class="text-muted-custom">Covers experiment tracking, model registry, and deployment with MLFlow alongside building and fine-tuning models using the Hugging Face ecosystem.</p>
 <a href="https://www.coursera.org/account/accomplishments/verify/S58HFC6ZNN4B" target="_blank" style="font-size:13px;font-weight:600;">View Certificate →</a>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <span class="cert-badge">Tableau</span>
 <h4>Tableau Desktop Specialist</h4>
-<p class="text-muted-custom">
-Demonstrates proficiency in data visualisation and analytics dashboard development using Tableau.
-</p>
+<p class="text-muted-custom">Demonstrates proficiency in data visualisation and analytics dashboard development using Tableau.</p>
 <a href="https://www.credly.com/badges/782173f6-ad92-4b30-ab36-f064a276dc1f/public_url" target="_blank" style="font-size:13px;font-weight:600;">View Certificate →</a>
 </div>
 </div>
-
 <div class="col-md-4">
 <div class="glass-card skill-card">
 <span class="cert-badge">Alteryx</span>
 <h4>Alteryx Designer Core</h4>
-<p class="text-muted-custom">
-Validates data preparation, automation, and analytics workflow development using Alteryx Designer.
-</p>
+<p class="text-muted-custom">Validates data preparation, automation, and analytics workflow development using Alteryx Designer.</p>
 <a href="https://s3.us-east-2.amazonaws.com/ayx.certificates/20200530_AlterxDesignerCore0TRE50dVpmT39GRaxmTFmb1clW5FTenSplNrFUbipHat90MrRVT.pdf" target="_blank" style="font-size:13px;font-weight:600;">View Certificate →</a>
 </div>
 </div>
-
 </div>
 </div>
 </section>
@@ -426,268 +294,353 @@ Validates data preparation, automation, and analytics workflow development using
 <h2 class="section-title mb-5">Selected Projects</h2>
 <div class="row g-4">
 
-<!-- Roche Multi-Agent Lab Pipeline (Flagship) -->
+<!-- ══════════════════════════════════════════════════
+     FLAGSHIP: Roche Multi-Agent Lab Pipeline
+     ══════════════════════════════════════════════════ -->
 <div class="col-md-12">
 <div class="glass-card">
 <span class="flagship-badge">Flagship Project</span>
 <h3>Roche Multi-Agent Lab Report Pipeline</h3>
-<p class="text-muted-custom">
-Architected and deployed a production multi-agent system at Roche to automate lab report processing end-to-end. A planner agent decomposes incoming reports and routes tasks across specialist agents for extraction, validation, and structured output generation. Reduced average processing time from 40 minutes to 100 seconds, a 96% reduction, while maintaining clinical-grade accuracy. Built on LangGraph with Azure AI Foundry, FastAPI, and Docker on Azure.
-</p>
+<p class="text-muted-custom">Architected and deployed a production multi-agent system at Roche to automate lab report processing end-to-end. A planner agent decomposes incoming reports and routes tasks across specialist agents for extraction, validation, and structured output generation. Reduced average processing time from 40 minutes to 100 seconds — a 96% reduction — while maintaining clinical-grade accuracy. Built on LangGraph with Azure AI Foundry, FastAPI, and Docker on Azure.</p>
 
-  <!-- ── WORKFLOW DIAGRAM ── -->
-  <div style="border-top:1px solid var(--border);padding-top:28px;margin-top:4px;">
+<div style="border-top:1px solid var(--border);padding-top:24px;margin-top:16px;">
+  <div class="workflow-eyebrow">System Workflow Architecture</div>
 
-    <div class="workflow-eyebrow">System Workflow Architecture</div>
+  <!-- Stats row -->
+  <div class="stat-row">
+    <div class="stat-pill"><span class="stat-pill-dot" style="background:#ef4444"></span><span class="stat-pill-val">40 min</span><span class="stat-pill-label">Before</span></div>
+    <div class="stat-pill"><span class="stat-pill-dot" style="background:#1a8a4a"></span><span class="stat-pill-val">100 sec</span><span class="stat-pill-label">After</span></div>
+    <div class="stat-pill"><span class="stat-pill-dot" style="background:#0071e3"></span><span class="stat-pill-val">96%</span><span class="stat-pill-label">Time Reduction</span></div>
+    <div class="stat-pill"><span class="stat-pill-dot" style="background:#5b3fa6"></span><span class="stat-pill-val">✓ Clinical-Grade</span><span class="stat-pill-label">Accuracy Maintained</span></div>
+  </div>
 
-    <!-- Stats -->
-    <div class="stat-row">
-      <div class="stat-pill">
-        <span class="stat-pill-dot" style="background:#ef4444"></span>
-        <span class="stat-pill-val">40 min</span>
-        <span class="stat-pill-label">Before</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-pill-dot" style="background:#1a8a4a"></span>
-        <span class="stat-pill-val">100 sec</span>
-        <span class="stat-pill-label">After</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-pill-dot" style="background:#0071e3"></span>
-        <span class="stat-pill-val">96%</span>
-        <span class="stat-pill-label">Time Reduction</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-pill-dot" style="background:#5b3fa6"></span>
-        <span class="stat-pill-val">✓ Clinical-Grade</span>
-        <span class="stat-pill-label">Accuracy Maintained</span>
+  <div class="wf-flow">
+    <!-- Input -->
+    <div class="wf-input-card">
+      <div class="wf-icon-box">📄</div>
+      <div>
+        <div class="wf-node-label">Incoming Lab Reports</div>
+        <div class="wf-node-sub">PDF · HL7 · FHIR · Unstructured Text</div>
       </div>
     </div>
 
-    <div class="wf-flow">
+    <div class="wf-connector"><div class="wf-line"></div><div class="wf-arrow"></div></div>
 
-      <!-- Input -->
-      <div class="wf-input-card">
-        <div class="wf-icon-box">📄</div>
+    <!-- Planner — trimmed -->
+    <div class="wf-planner">
+      <div class="wf-planner-top">
+        <div class="wf-planner-icon">🧠</div>
         <div>
-          <div class="wf-node-label">Incoming Lab Reports</div>
-          <div class="wf-node-sub">PDF · HL7 · FHIR · Unstructured Text</div>
+          <div class="wf-planner-title">Planner Agent</div>
+          <div class="wf-planner-role">Orchestrator · LangGraph StateGraph</div>
         </div>
       </div>
-
-      <!-- Arrow -->
-      <div class="wf-connector">
-        <div class="wf-line"></div>
-        <div class="wf-arrow"></div>
-      </div>
-
-      <!-- Planner -->
-      <div class="wf-planner">
-        <div class="wf-planner-top">
-          <div class="wf-planner-icon">🧠</div>
-          <div>
-            <div class="wf-planner-title">Planner Agent</div>
-            <div class="wf-planner-role">Orchestrator · LangGraph StateGraph</div>
-          </div>
-        </div>
-        <div class="wf-planner-desc">
-          Receives and parses each report, decomposes it into a task graph, assigns priorities, and dynamically routes sub-tasks to the appropriate specialist agents. Handles retries and error recovery throughout the pipeline.
-        </div>
-        <div class="wf-planner-tags">
-          <span class="wf-ptag">Task Decomposition</span>
-          <span class="wf-ptag">DAG Routing</span>
-          <span class="wf-ptag">Agent Orchestration</span>
-          <span class="wf-ptag">Error Recovery</span>
-          <span class="wf-ptag">State Management</span>
-        </div>
-      </div>
-
-      <!-- Fan out -->
-      <div class="wf-fan">
-        <svg viewBox="0 0 700 40" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="350" y1="0" x2="350" y2="18" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="117" y1="18" x2="583" y2="18" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="117" y1="18" x2="117" y2="40" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="350" y1="18" x2="350" y2="40" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="583" y1="18" x2="583" y2="40" stroke="#ccc" stroke-width="1.2"/>
-        </svg>
-      </div>
-
-      <!-- Specialist agents -->
-      <div class="wf-agents">
-
-        <!-- Extraction -->
-        <div class="wf-agent" style="--ac:#0071e3;--ac-bg:#e8f1fb;--ac-text:#0071e3;">
-          <div class="wf-agent-icon">🔍</div>
-          <div class="wf-agent-name">Extraction Agent</div>
-          <div class="wf-agent-role">Data Extraction</div>
-          <ul class="wf-tasks">
-            <li>Parse raw report text and fields</li>
-            <li>Extract patient IDs, panels, result values</li>
-            <li>Handle PDF, HL7, FHIR formats</li>
-            <li>Normalize units and reference ranges</li>
-            <li>Flag ambiguous or incomplete fields</li>
-          </ul>
-        </div>
-
-        <!-- Validation -->
-        <div class="wf-agent" style="--ac:#92580a;--ac-bg:#fdf3e0;--ac-text:#92580a;">
-          <div class="wf-agent-icon">🛡️</div>
-          <div class="wf-agent-name">Validation Agent</div>
-          <div class="wf-agent-role">Clinical Validation</div>
-          <ul class="wf-tasks">
-            <li>Apply clinical reference range checks</li>
-            <li>Detect anomalies and critical alerts</li>
-            <li>Ensure IVD / IVDR compliance</li>
-            <li>Assign confidence scores per value</li>
-            <li>Hallucination and faithfulness checks</li>
-          </ul>
-          <div class="deepeval-badge">
-            <span>⚡</span> DeepEval · G-Eval Metrics
-          </div>
-        </div>
-
-        <!-- Output -->
-        <div class="wf-agent" style="--ac:#1a8a4a;--ac-bg:#e6f4ec;--ac-text:#1a8a4a;">
-          <div class="wf-agent-icon">📊</div>
-          <div class="wf-agent-name">Output Agent</div>
-          <div class="wf-agent-role">Structured Generation</div>
-          <ul class="wf-tasks">
-            <li>Generate FHIR-compliant JSON bundles</li>
-            <li>Produce clinical readable summaries</li>
-            <li>Format for EHR ingestion</li>
-            <li>Attach audit trail and provenance</li>
-            <li>Emit structured logs for observability</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Merge -->
-      <div class="wf-merge">
-        <svg viewBox="0 0 700 40" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <line x1="117" y1="0" x2="117" y2="22" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="350" y1="0" x2="350" y2="22" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="583" y1="0" x2="583" y2="22" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="117" y1="22" x2="583" y2="22" stroke="#ccc" stroke-width="1.2"/>
-          <line x1="350" y1="22" x2="350" y2="40" stroke="#ccc" stroke-width="1.2"/>
-          <polygon points="344,36 350,40 356,36" fill="#aaa"/>
-        </svg>
-      </div>
-
-      <!-- Outputs -->
-      <div class="wf-outputs">
-        <div class="wf-out">
-          <div class="wf-out-icon">✅</div>
-          <div>
-            <div class="wf-out-title">Structured Report</div>
-            <div class="wf-out-desc">FHIR-compliant JSON bundles for EHR ingestion.</div>
-          </div>
-        </div>
-        <div class="wf-out">
-          <div class="wf-out-icon">📋</div>
-          <div>
-            <div class="wf-out-title">Clinical Summary</div>
-            <div class="wf-out-desc">Human-readable summary with highlighted critical values.</div>
-          </div>
-        </div>
-        <div class="wf-out">
-          <div class="wf-out-icon">🔔</div>
-          <div>
-            <div class="wf-out-title">Critical Alerts</div>
-            <div class="wf-out-desc">Real-time out-of-range alerts routed to care teams.</div>
-          </div>
-        </div>
-        <div class="wf-out">
-          <div class="wf-out-icon">🗂️</div>
-          <div>
-            <div class="wf-out-title">Audit Trail</div>
-            <div class="wf-out-desc">Full provenance logs for compliance and QA review.</div>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end wf-flow -->
-
-    <!-- Tech stack -->
-    <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
-      <div class="wf-tech-label">Technology Stack</div>
-      <div class="wf-chips">
-        <span class="wf-chip">LangGraph</span>
-        <span class="wf-chip">Azure AI Foundry</span>
-        <span class="wf-chip">FastAPI</span>
-        <span class="wf-chip">Docker</span>
-        <span class="wf-chip">DeepEval</span>
-        <span class="wf-chip">FHIR R4</span>
-        <span class="wf-chip">HL7 v2/v3</span>
-        <span class="wf-chip">Azure Container Apps</span>
-        <span class="wf-chip">Azure Monitor</span>
-        <span class="wf-chip">Python</span>
+      <div class="wf-planner-desc">Decomposes each report into a task graph, routes sub-tasks to specialist agents, and manages retries and error recovery throughout the pipeline.</div>
+      <div class="wf-planner-tags">
+        <span class="wf-ptag">Task Decomposition</span>
+        <span class="wf-ptag">DAG Routing</span>
+        <span class="wf-ptag">Agent Orchestration</span>
+        <span class="wf-ptag">Error Recovery</span>
+        <span class="wf-ptag">State Management</span>
       </div>
     </div>
 
-  </div><!-- end workflow diagram wrapper -->
-</div>
-</div>
-<!-- end flagship -->
+    <!-- Fan out -->
+    <div class="wf-fan">
+      <svg viewBox="0 0 700 40" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="350" y1="0" x2="350" y2="18" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="117" y1="18" x2="583" y2="18" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="117" y1="18" x2="117" y2="40" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="350" y1="18" x2="350" y2="40" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="583" y1="18" x2="583" y2="40" stroke="#ccc" stroke-width="1.2"/>
+      </svg>
+    </div>
 
-<!-- Real Estate and Insurance Knowledge Retrieval System (3rd) -->
-<div class="col-md-6">
-<div class="glass-card">
-<h3>
-Real Estate and Insurance Knowledge Retrieval System
-<a href="https://github.com/Yuvansh1/property-rag-assistant" target="_blank" style="font-size:14px;margin-left:10px;">
-Project Link
-</a>
-</h3>
-<p class="text-muted-custom">
-Production-grade Agentic RAG system with two autonomous agents: a Critic Agent that scores confidence and flags hallucinations on every response, and a Monitor Agent that proactively surfaces knowledge gaps. Built with Gemini embeddings, Pinecone vector search, and FastAPI. Includes a full LLMOps observability layer with MLFlow-tracked experiments, per-step latency logging, SQLite persistence, p95 metrics, and a human feedback loop. Containerized with Docker and shipped with a CI/CD pipeline via GitHub Actions.
-</p>
-</div>
-</div>
-  
-<!-- Banking Risk Agent (2nd) -->
-<div class="col-md-6">
-<div class="glass-card">
-<h3>
-Banking Risk Intelligence Agent
-<a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/banking-risk-intelligence-agent" target="_blank" style="font-size:14px;margin-left:10px;">
-Project Link
-</a>
-</h3>
-<p class="text-muted-custom">
-Multi-agent financial intelligence system converting unstructured financial news into structured, evidence-backed risk insights. Planner, research, answer, and critic agents collaborate to classify risk, retrieve evidence, generate audit-ready summaries with citations, and self-validate outputs to reduce hallucinations.
-</p>
-</div>
-</div>
+    <!-- Specialist agents -->
+    <div class="wf-agents">
+      <div class="wf-agent" style="--ac:#0071e3;--ac-bg:#e8f1fb;--ac-text:#0071e3;">
+        <div class="wf-agent-icon">🔍</div>
+        <div class="wf-agent-name">Extraction Agent</div>
+        <div class="wf-agent-role">Data Extraction</div>
+        <ul class="wf-tasks">
+          <li>Parse raw report text and fields</li>
+          <li>Extract patient IDs, panels, result values</li>
+          <li>Handle PDF, HL7, FHIR formats</li>
+          <li>Normalize units and reference ranges</li>
+          <li>Flag ambiguous or incomplete fields</li>
+        </ul>
+      </div>
+      <div class="wf-agent" style="--ac:#92580a;--ac-bg:#fdf3e0;--ac-text:#92580a;">
+        <div class="wf-agent-icon">🛡️</div>
+        <div class="wf-agent-name">Validation Agent</div>
+        <div class="wf-agent-role">Clinical Validation</div>
+        <ul class="wf-tasks">
+          <li>Apply clinical reference range checks</li>
+          <li>Detect anomalies and critical alerts</li>
+          <li>Ensure IVD / IVDR compliance</li>
+          <li>Assign confidence scores per value</li>
+          <li>Hallucination and faithfulness checks</li>
+        </ul>
+        <div class="deepeval-badge"><span>⚡</span> DeepEval · G-Eval Metrics</div>
+      </div>
+      <div class="wf-agent" style="--ac:#1a8a4a;--ac-bg:#e6f4ec;--ac-text:#1a8a4a;">
+        <div class="wf-agent-icon">📊</div>
+        <div class="wf-agent-name">Output Agent</div>
+        <div class="wf-agent-role">Structured Generation</div>
+        <ul class="wf-tasks">
+          <li>Generate FHIR-compliant JSON bundles</li>
+          <li>Produce clinical readable summaries</li>
+          <li>Format for EHR ingestion</li>
+          <li>Attach audit trail and provenance</li>
+          <li>Emit structured logs for observability</li>
+        </ul>
+      </div>
+    </div>
 
-<!-- AI Task Agent (4th) -->
+    <!-- Merge -->
+    <div class="wf-merge">
+      <svg viewBox="0 0 700 40" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="117" y1="0" x2="117" y2="22" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="350" y1="0" x2="350" y2="22" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="583" y1="0" x2="583" y2="22" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="117" y1="22" x2="583" y2="22" stroke="#ccc" stroke-width="1.2"/>
+        <line x1="350" y1="22" x2="350" y2="40" stroke="#ccc" stroke-width="1.2"/>
+        <polygon points="344,36 350,40 356,36" fill="#aaa"/>
+      </svg>
+    </div>
+
+    <!-- Outputs -->
+    <div class="wf-outputs">
+      <div class="wf-out"><div class="wf-out-icon">✅</div><div><div class="wf-out-title">Structured Report</div><div class="wf-out-desc">FHIR-compliant JSON bundles for EHR ingestion.</div></div></div>
+      <div class="wf-out"><div class="wf-out-icon">📋</div><div><div class="wf-out-title">Clinical Summary</div><div class="wf-out-desc">Human-readable summary with highlighted critical values.</div></div></div>
+      <div class="wf-out"><div class="wf-out-icon">🔔</div><div><div class="wf-out-title">Critical Alerts</div><div class="wf-out-desc">Real-time out-of-range alerts routed to care teams.</div></div></div>
+      <div class="wf-out"><div class="wf-out-icon">🗂️</div><div><div class="wf-out-title">Audit Trail</div><div class="wf-out-desc">Full provenance logs for compliance and QA review.</div></div></div>
+    </div>
+  </div>
+
+  <!-- Tech stack -->
+  <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
+    <div class="wf-tech-label">Technology Stack</div>
+    <div class="wf-chips">
+      <span class="wf-chip">LangGraph</span><span class="wf-chip">Azure AI Foundry</span><span class="wf-chip">FastAPI</span><span class="wf-chip">Docker</span><span class="wf-chip">DeepEval</span><span class="wf-chip">FHIR R4</span><span class="wf-chip">HL7 v2/v3</span><span class="wf-chip">Azure Container Apps</span><span class="wf-chip">Azure Monitor</span><span class="wf-chip">Python</span>
+    </div>
+  </div>
+</div><!-- end workflow wrapper -->
+</div>
+</div>
+<!-- end Roche flagship -->
+
+
+<!-- ══════════════════════════════════════════════════
+     Property RAG — with agent flow diagram
+     ══════════════════════════════════════════════════ -->
+<div class="col-md-6">
+<div class="glass-card" style="height:100%;">
+<h3>
+  Real Estate &amp; Insurance Knowledge Retrieval System
+  <a href="https://github.com/Yuvansh1/property-rag-assistant" target="_blank" style="font-size:14px;margin-left:10px;">Project Link</a>
+</h3>
+<p class="text-muted-custom">Production-grade Agentic RAG with Gemini embeddings, Pinecone vector search, and FastAPI. Two autonomous agents validate every response and proactively surface knowledge gaps. Full LLMOps observability: per-step latency logging, SQLite persistence, p95 metrics, and a human feedback loop. Containerized with Docker and shipped via GitHub Actions CI/CD.</p>
+
+<!-- Agent flow -->
+<div style="border-top:1px solid var(--border);padding-top:18px;margin-top:16px;">
+  <div class="workflow-eyebrow">Agent Architecture</div>
+
+  <div class="agent-flow">
+    <!-- Input -->
+    <div class="wf-input-card" style="max-width:380px;">
+      <div class="wf-icon-box">❓</div>
+      <div>
+        <div class="wf-node-label">User Query</div>
+        <div class="wf-node-sub">Real estate or insurance question</div>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- RAG Pipeline steps -->
+    <div style="background:#f8f8fa;border:1px solid #e5e5e5;border-radius:10px;padding:14px 20px;width:100%;max-width:380px;">
+      <div style="font-weight:700;font-size:13px;margin-bottom:8px;">RAG Pipeline</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;"><span style="background:#e8f1fb;color:#0071e3;border-radius:5px;padding:2px 8px;font-weight:600;">1</span><span>Embed query → Gemini embedding-001 (1536-dim)</span></div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;"><span style="background:#e8f1fb;color:#0071e3;border-radius:5px;padding:2px 8px;font-weight:600;">2</span><span>Retrieve top-K chunks → Pinecone semantic search</span></div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;"><span style="background:#e8f1fb;color:#0071e3;border-radius:5px;padding:2px 8px;font-weight:600;">3</span><span>Generate answer → Gemini Flash (context-grounded)</span></div>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- Two agents side by side -->
+    <div class="agent-row" style="width:100%;max-width:480px;">
+      <!-- Critic Agent -->
+      <div class="agent-box" style="--ac:#7c3aed;border-color:#7c3aed;background:#f5f0ff;flex:1;min-width:180px;">
+        <div class="ab-icon">🧐</div>
+        <div class="ab-name" style="color:#5b21b6;">Critic Agent</div>
+        <div class="ab-role" style="color:#7c3aed;">Per-Response Validation</div>
+        <ul class="ab-tasks" style="color:#4c1d95;">
+          <li>Score confidence 0–1</li>
+          <li>Validate context grounding</li>
+          <li>Flag hallucinations</li>
+          <li>Route low-confidence answers</li>
+        </ul>
+      </div>
+      <!-- Monitor Agent -->
+      <div class="agent-box" style="border-color:#0891b2;background:#ecfeff;flex:1;min-width:180px;">
+        <div class="ab-icon">📡</div>
+        <div class="ab-name" style="color:#0e7490;">Monitor Agent</div>
+        <div class="ab-role" style="color:#0891b2;">Systemic Gap Detection</div>
+        <ul class="ab-tasks" style="color:#164e63;">
+          <li>Track query patterns over time</li>
+          <li>Surface knowledge gaps</li>
+          <li>Proactive low-confidence alerts</li>
+          <li>Generate monitoring reports</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- LLMOps layer -->
+    <div style="background:#f8f8fa;border:1px solid #e5e5e5;border-radius:10px;padding:12px 18px;width:100%;max-width:480px;">
+      <div style="font-weight:700;font-size:12px;margin-bottom:6px;">LLMOps Observability</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span class="wf-chip">SQLite persistence</span><span class="wf-chip">Per-step latency</span><span class="wf-chip">p95 metrics</span><span class="wf-chip">Human feedback loop</span><span class="wf-chip">GitHub Actions CI/CD</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div class="wf-tech-label">Technology Stack</div>
+    <div class="wf-chips">
+      <span class="wf-chip">FastAPI</span><span class="wf-chip">Gemini</span><span class="wf-chip">Pinecone</span><span class="wf-chip">Mangum</span><span class="wf-chip">Vercel</span><span class="wf-chip">Docker</span><span class="wf-chip">SQLite</span><span class="wf-chip">GitHub Actions</span><span class="wf-chip">Python</span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- end Property RAG -->
+
+
+<!-- ══════════════════════════════════════════════════
+     Banking Risk Agent — with agent flow diagram
+     ══════════════════════════════════════════════════ -->
+<div class="col-md-6">
+<div class="glass-card" style="height:100%;">
+<h3>
+  Banking Risk Intelligence Agent
+  <a href="https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/banking-risk-intelligence-agent" target="_blank" style="font-size:14px;margin-left:10px;">Project Link</a>
+</h3>
+<p class="text-muted-custom">Multi-agent financial intelligence system converting unstructured financial news into structured, evidence-backed risk insights. Four agents collaborate to classify risk, retrieve evidence, generate audit-ready summaries with citations, and self-validate outputs to reduce hallucinations.</p>
+
+<!-- Agent flow -->
+<div style="border-top:1px solid var(--border);padding-top:18px;margin-top:16px;">
+  <div class="workflow-eyebrow">4-Agent Pipeline</div>
+
+  <div class="agent-flow">
+    <!-- Input -->
+    <div class="wf-input-card" style="max-width:380px;">
+      <div class="wf-icon-box">📰</div>
+      <div>
+        <div class="wf-node-label">Financial News Input</div>
+        <div class="wf-node-sub">Unstructured text · Market data · Reports</div>
+      </div>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- Agent 1: Planner -->
+    <div class="agent-box" style="border-color:#0071e3;background:#e8f1fb;width:100%;max-width:380px;">
+      <div class="ab-icon">🗂️</div>
+      <div class="ab-name" style="color:#0071e3;">Planner Agent</div>
+      <div class="ab-role" style="color:#0057b3;">Query Decomposition &amp; Orchestration</div>
+      <ul class="ab-tasks" style="color:#003d80;">
+        <li>Decompose complex news into risk sub-questions</li>
+        <li>Classify intent and assign retrieval strategy</li>
+        <li>Maintain LangGraph state across all agents</li>
+      </ul>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- Agent 2: Research -->
+    <div class="agent-box" style="border-color:#92580a;background:#fdf3e0;width:100%;max-width:380px;">
+      <div class="ab-icon">🔬</div>
+      <div class="ab-name" style="color:#92580a;">Research Agent</div>
+      <div class="ab-role" style="color:#7a4a08;">Evidence Retrieval · TF-IDF + Cosine</div>
+      <ul class="ab-tasks" style="color:#5c3806;">
+        <li>Retrieve supporting evidence per sub-question</li>
+        <li>Rank by relevance using TF-IDF + cosine similarity</li>
+        <li>Return source-attributed evidence chunks</li>
+      </ul>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- Agent 3: Answer -->
+    <div class="agent-box" style="border-color:#1a8a4a;background:#e6f4ec;width:100%;max-width:380px;">
+      <div class="ab-icon">📝</div>
+      <div class="ab-name" style="color:#1a8a4a;">Answer Agent</div>
+      <div class="ab-role" style="color:#14703c;">Risk Synthesis &amp; Citation</div>
+      <ul class="ab-tasks" style="color:#0d5a31;">
+        <li>Synthesise risk classification from evidence</li>
+        <li>Generate audit-ready summaries with citations</li>
+        <li>Structure output for downstream validation</li>
+      </ul>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- Agent 4: Critic -->
+    <div class="agent-box" style="border-color:#7c3aed;background:#f5f0ff;width:100%;max-width:380px;">
+      <div class="ab-icon">🧐</div>
+      <div class="ab-name" style="color:#5b21b6;">Critic Agent</div>
+      <div class="ab-role" style="color:#7c3aed;">Output Validation &amp; Hallucination Guard</div>
+      <ul class="ab-tasks" style="color:#4c1d95;">
+        <li>Score each claim against retrieved evidence</li>
+        <li>Flag unsupported or hallucinated statements</li>
+        <li>Route back to Answer Agent if confidence &lt; threshold</li>
+      </ul>
+    </div>
+
+    <div class="flow-arrow-down"><div class="fa-line"></div><div class="fa-tip"></div></div>
+    <div class="loop-note">↩ Revision loop: Critic → Answer Agent (max 3 iterations)</div>
+    <div class="flow-arrow-down" style="margin-top:6px;"><div class="fa-line"></div><div class="fa-tip"></div></div>
+
+    <!-- Output -->
+    <div class="wf-input-card" style="max-width:380px;background:#f0fdf4;border-color:#bbf7d0;">
+      <div class="wf-icon-box">✅</div>
+      <div>
+        <div class="wf-node-label">Validated Risk Report</div>
+        <div class="wf-node-sub">Risk classification · Evidence citations · Audit trail</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;">
+    <div class="wf-tech-label">Technology Stack</div>
+    <div class="wf-chips">
+      <span class="wf-chip">LangGraph</span><span class="wf-chip">Python</span><span class="wf-chip">TF-IDF</span><span class="wf-chip">Cosine Similarity</span><span class="wf-chip">Per-agent LLM</span><span class="wf-chip">Critic validation</span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- end Banking Risk -->
+
+
+<!-- AI Task Agent -->
 <div class="col-md-6">
 <div class="glass-card">
-<h3>
-AI Task Agent
-<a href="https://github.com/Yuvansh1/ai-task-agent" target="_blank" style="font-size:14px;margin-left:10px;">
-Project Link
-</a>
-</h3>
-<p class="text-muted-custom">
-A full-stack agentic application with a FastAPI backend and Streamlit frontend, containerised with Docker Compose. Demonstrates tool selection, multi-step chaining, real-time SSE streaming, role-based access control, and persistent task history within a decoupled architecture.
-</p>
+<h3>AI Task Agent <a href="https://github.com/Yuvansh1/ai-task-agent" target="_blank" style="font-size:14px;margin-left:10px;">Project Link</a></h3>
+<p class="text-muted-custom">A full-stack agentic application with a FastAPI backend and Streamlit frontend, containerised with Docker Compose. Demonstrates tool selection, multi-step chaining, real-time SSE streaming, role-based access control, and persistent task history within a decoupled architecture.</p>
 </div>
 </div>
 
 <!-- Churn Prediction -->
 <div class="col-md-6">
 <div class="glass-card">
-<h3>
-Customer Churn Prediction
-<a href="https://github.com/Yuvansh1/Media_Analytics_Automation_Python/blob/master/Yuvansh_Customer_Churn_Prediction.ipynb" target="_blank" style="font-size:14px;margin-left:10px;">
-Project Link
-</a>
-</h3>
-<p class="text-muted-custom">
-XGBoost and AutoML models predicting customer churn with high accuracy, enabling targeted retention strategies that reduced churn by 17% and improved customer lifetime value.
-</p>
+<h3>Customer Churn Prediction <a href="https://github.com/Yuvansh1/Media_Analytics_Automation_Python/blob/master/Yuvansh_Customer_Churn_Prediction.ipynb" target="_blank" style="font-size:14px;margin-left:10px;">Project Link</a></h3>
+<p class="text-muted-custom">XGBoost and AutoML models predicting customer churn with high accuracy, enabling targeted retention strategies that reduced churn by 17% and improved customer lifetime value.</p>
 </div>
 </div>
 
@@ -700,18 +653,14 @@ XGBoost and AutoML models predicting customer churn with high accuracy, enabling
 <div class="container">
 <h2 class="section-title mb-5">Publications</h2>
 <div class="row g-4">
-
 <div class="col-md-12">
 <div class="publication-card">
 <p class="text-muted-custom" style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Substack / March 2026</p>
 <h3 style="margin-bottom:10px">AI Technology: 5 Min Read</h3>
-<p class="text-muted-custom">
-A concise breakdown of the latest developments in AI technology, covering practical insights for practitioners building with LLMs, agentic systems, and production ML pipelines.
-</p>
+<p class="text-muted-custom">A concise breakdown of the latest developments in AI technology, covering practical insights for practitioners building with LLMs, agentic systems, and production ML pipelines.</p>
 <a href="https://open.substack.com/pub/yuvanshbhardwaj/p/ai-technology-5-min-read-march-2026-ai?r=b7f7o&utm_campaign=post&utm_medium=web" target="_blank" style="font-size:13px;font-weight:600;">Read on Substack →</a>
 </div>
 </div>
-
 </div>
 </div>
 </section>
@@ -720,9 +669,7 @@ A concise breakdown of the latest developments in AI technology, covering practi
 <section id="contact" class="cta-section py-5">
 <div class="container text-center">
 <h2 style="font-size:2.5rem;font-weight:900">Let's work together</h2>
-<p style="max-width:400px;margin:auto;margin-top:10px">
-Interested in AI engineering, agent systems or production ML collaborations.
-</p>
+<p style="max-width:400px;margin:auto;margin-top:10px">Interested in AI engineering, agent systems or production ML collaborations.</p>
 <div class="mt-4 d-flex justify-content-center gap-3">
 <a href="/cdn-cgi/l/email-protection#41383437202f32297301262c20282d6f222e2c" style="background:white;color:black;padding:10px 24px;border-radius:40px;text-decoration:none;">Email</a>
 <a href="https://linkedin.com/in/yuvansh1302" style="border:1px solid white;padding:10px 24px;border-radius:40px;color:white;text-decoration:none;">LinkedIn</a>
@@ -735,9 +682,6 @@ Interested in AI engineering, agent systems or production ML collaborations.
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-document.getElementById("footer-year").textContent = "© " + new Date().getFullYear() + " Yuvansh Bhardwaj";
-</script>
-
+<script>document.getElementById("footer-year").textContent = "© " + new Date().getFullYear() + " Yuvansh Bhardwaj";</script>
 </body>
 </html>
